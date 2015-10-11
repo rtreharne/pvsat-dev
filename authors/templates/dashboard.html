@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class = "col-lg-12 block splash">
+                <br />
+                <br />
+                <div class="col-md-4 block" style=" text-align: center">
+                <div class="col-lg-12 square-box splash-box block" style="min-height: 445px;background-color: #234867">
+					<h1>{{user.first_name}} {{user.last_name}}</h1>
+                    <br />
+
+                    {% if profile.picture %}
+                    {% thumbnail profile.pic "150x150" crop="center" as im %}
+                    <img class="profile-pic-lg" src="{{im.url}}" name="{{profile.user.first_name}} {{profile.user.last_name}}">
+                    {% endthumbnail %}
+
+                    {% else %}
+                    <div class="pic-box">
+                        {{user.first_name|slice:":1"}}{{user.last_name|slice:":1"}}
+                        
+                    </div>
+                    {% endif %}
+
+					{% thumbnail profile.picture "150x150" crop="center" as im %}
+					<img class="profile-pic-lg" src="{{im.url}}" name="{{user.first_name}} {{user.last_name}}">
+					{% endthumbnail %}
+					<h3>{{profile.affiliation}}</h3>
+					<p>
+						{% if profile.url %}
+						<a href="{{profile.url}}" target="_blank"><i class="fa fa-globe fa-3x"></i></a>
+						{% endif %}
+						{% if profile.linkedin %}
+						<a href="{{profile.linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a>
+						{% endif %}
+						{% if profile.twitter %}
+						<a href="http://twitter.com/{{profile.twitter|slice:"1:"}}" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a>
+						{% endif %}
+					</p>
+                    <br />
+					{% if profile.bio %}
+					<p class="bio" style="text-align: left">{{profile.bio}}</p>
+					{% endif %}
+                    <br />
+					<div class="col-lg-12">
+						<a class="btn btn-primary page-scroll" href="{% url 'update_profile' %}">Update Profile</a>
+                    <br/>
+                    <br/>
+					</div>
+				</div>
+            </div>
+
+
+                <div class="col-md-8" >
+                    <div class="square-box splash-box block"style="background-color: #3896B1; min-height:445px;">
+                    <h2>My Abstracts</h2>
+                    {% if abstracts %}
+                    <div class="col-lg-12">
+                    {% for abstract in abstracts %}
+                    <h3>{{ abstract.title }}</h3>
+                    <p>{{ abstract.authors }}</p>
+                    <!--
+                    <div class="tag-box">
+                        {% for tag in abstract.tags_as_list %}
+                        <a href=""><p class="tag">{{tag}}</p></a>
+                        {% endfor %}
+                    </div>
+                    -->
+                    <p><strong>{{abstract.unique_id}}</strong> | Submitted for: <strong>{{abstract.delivery}} presentation</strong> | {{abstract.status}}</p>
+                      {% if abstract.status == 'Accepted' %}
+                          <a class="btn btn-success page-scroll" href="#">Submit Paper</a>
+                      {% endif %}
+                    <hr>
+                    {% endfor %}
+					{% else %}
+					    <p>No abstracts submitted<p>
+				    {% endif %}
+                    <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
+                    <br/>
+                    <br/>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

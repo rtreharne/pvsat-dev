@@ -1,0 +1,13 @@
+Abstract Submitted
+
+ID: {{abstract.unique_id}}
+TITLE: {{abstract.title}}
+CORRESPONDING AUTHOR: {{abstract.author.user.first_name}} {{abstract.author.user.last_name}}: {{abstract.author.user.email}}
+DELIVERY PREFERENCE: {{abstract.delivery}}
+
+ABSTRACT:
+
+{{abstract.abstract}}
+
+FILE: http://{{URL}}/media/abstract_uploads/{{abstract.upload}}
+
