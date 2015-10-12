@@ -1,0 +1,6 @@
+NEW AUTHOR REGISTERED
+
+Name: {{user.first_name}} {{user.last_name}}
+Email: {{user.email}}
+Affiliation: {{user.affiliation}}
+
