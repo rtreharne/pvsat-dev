@@ -145,10 +145,16 @@ def register(request):
         if user_form.is_valid() and profile_form.is_valid():
 
             profile = profile_form.save(commit=False)
-            user = user_form.save(commit=False)
+            user = user_form.save()
+            profile.user = user
+
+            if 'picture' in request.FILES:
+                profile.picture = request.FILES['picture']
+
+            profile.save()
 
             #Email confirmation to user
-            subject = 'PVSAT: Author registration confirmationi'
+            subject = 'PVSAT: Author registration confirmation'
 
             text_content = render_to_string("user_sub_conf.txt", {'user': user, 'URL': settings.SITE_URL})
             html_content = render_to_string("user_sub_conf.html", {'user': user, 'URL': settings.SITE_URL})
@@ -162,7 +168,7 @@ def register(request):
 
             subject = 'New Author'
 
-            text_content = render_to_string("user_to_admin.txt", {'user': user, 'URL': settings.SITE_URL})
+            text_content = render_to_string("user_to_admin.txt", {'user': user, 'profile': profile, 'URL': settings.SITE_URL})
 
             msg2 = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
 
@@ -171,13 +177,6 @@ def register(request):
                 msg2.send()
 
 
-            profile.user = user
-
-            if 'picture' in request.FILES:
-                profile.picture = request.FILES['picture']
-
-            user.save()
-            profile.save()
 
             registered = True
 
