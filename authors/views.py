@@ -143,15 +143,41 @@ def register(request):
         profile_form = UserProfileForm(data=request.POST)
 
         if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save()
-            user.save()
 
             profile = profile_form.save(commit=False)
+            user = user_form.save(commit=False)
+
+            #Email confirmation to user
+            subject = 'Abstract Submission Confirmation: %s' % (abstract.unique_id)
+
+            text_content = render_to_string("user_sub_conf.txt", {'abstract': abstract, 'URL': settings.SITE_URL})
+            html_content = render_to_string("user_sub_conf.html", {'abstract': abstract, 'URL': settings.SITE_URL})
+
+            email = abstract.author.user.email
+
+            msg1 = EmailMultiAlternatives(subject, text_content, '', [email])
+            msg1.attach_alternative(html_content, "text/html")
+
+            #Email confirmation to admin
+
+            subject = 'Abstract %s submitted by %s %s' % (abstract.unique_id, abstract.author.user.first_name, abstract.author.user.last_name)
+
+            text_content = render_to_string("user_to_admin.txt", {'abstract': abstract, 'URL': settings.SITE_URL})
+
+            msg2 = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
+
+            if settings.EMAIL_STATUS:
+                msg1.send()
+                msg2.send()
+
+            user.save()
+
             profile.user = user
 
             if 'picture' in request.FILES:
                 profile.picture = request.FILES['picture']
 
+            user.save()
             profile.save()
 
             registered = True
