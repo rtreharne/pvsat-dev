@@ -153,7 +153,7 @@ def register(request):
             text_content = render_to_string("user_sub_conf.txt", {'user': user, 'URL': settings.SITE_URL})
             html_content = render_to_string("user_sub_conf.html", {'user': user, 'URL': settings.SITE_URL})
 
-            email = abstract.author.user.email
+            email = author.user.email
 
             msg1 = EmailMultiAlternatives(subject, text_content, '', [email])
             msg1.attach_alternative(html_content, "text/html")
