@@ -496,6 +496,12 @@ div.pic-box {
 }
 .fa:hover {
     color: #969696;
+}
+ul i.fa  {
+    color: #777 !important;
+}
+.fa:hover {
+    color: #969696;
  }
  .btn-primary {
      border-color: white;

@@ -15,7 +15,7 @@
                     <div class="col-lg-12">
 <style type="text/css">
 .tg  {border-collapse:collapse;border-spacing:0; box-shadow: 0px 0px 10px white; border: 2px solid white;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-cqd4{background-color:#1A443B;color:#ffffff;text-align:center;vertical-align:top}
@@ -87,14 +87,19 @@
 
             </div>
             <div class="col-md-4 block">
-                <div class="square-box blog-box" style="height: 650px;overflow:hidden; background-color:#3E5584; margin-bottom:30px;">
+                <div class="square-box blog-box" style="min-height: 650px;overflow:hidden; background-color:#3E5584; margin-bottom:30px;">
                     <h2>Registration Form</h2>
                     <p style="font-size: 1em;">While it is now possible for our contributors to submit abstracts electronically through our new website we are still sticking to our old system of delegate registration.</p>
-                    <p>Please download the registration form by clicking the button below. Complete it the old fasioned way and return it via email to:<br/> <a href="mailto:info@uk-ises.org">info@uk-ises.org</a></p>
+                    <p style="font-size: 1em;">Please download the registration form by clicking the button below. Complete it the old fasioned way and return it via email to:<br/> <a href="mailto:info@uk-ises.org">info@uk-ises.org</a></p>
                     <div class="center">
                         <a class="btn btn-primary page-scroll" style="max-width: 400px;" href="/media/forms/registration_form.docx"><i class="fa fa-file"></i> Delegate Registration Form</a>
                     </div>
                     <hr>
+                    <h2>Bursaries</h2>
+                    <p style="font-size: 1em;">We offer students the opportunity to apply for a bursary to cover their costs for their registration fee. Click the button below to apply</p>
+                    <div class="center">
+                        <a class="btn btn-primary page-scroll" style="max-width: 400px;" href="{% url 'bursary' %}">Burary Application</a>
+                    </div>
                     <h2>Exhibitor Registration</h2>
                     <p>PVSAT-12 provides opportunities for leading UK companies to interact with the a world-leading UK academic community. We invite potential exhibitors to register by completing and submitting the following form to: <br/> <a href="mailto:info@uk-ises.org">info@uk-ises.org</a></p>
                     <div class="center">
