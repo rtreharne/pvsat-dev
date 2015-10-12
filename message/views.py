@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from message.forms import MessageForm
 from django.core.mail import send_mail
+from django.conf import settings
 
 def message(request):
 
@@ -12,7 +13,8 @@ def message(request):
 		if contact_form.is_valid():
 			message = contact_form.save()
 			sent = True
-			send_mail(request.POST['subject'], request.POST['message'], 'rob.pvsat@gmail.com', ['rob.pvsat@gmail.com'], fail_silently=False)
+            if settings.EMAIL_STATUS:
+                send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
 		else:
 			print contact_form.errors
 	else:

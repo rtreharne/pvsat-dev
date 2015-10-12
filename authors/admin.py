@@ -22,10 +22,13 @@ class AbstractAdmin(admin.ModelAdmin):
     view_id.short_description = 'ID'
     view_id.admin_order_field='unique_id'
     view_id.allow_tags = True
+
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ('user', 'affiliation', 'twitter')
     
 
 
-admin.site.register(UserProfile)
+admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Abstract, AbstractAdmin)
 
 

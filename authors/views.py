@@ -31,6 +31,7 @@ def submit_paper(request, abstract_id=1):
                     abstract.save()
 
                     submitted = True
+                    return HttpResponseRedirect(reverse('dashboard'))
 
                 else:
                     print abstract_form.errors
@@ -57,6 +58,7 @@ def update_profile(request):
             profile.save()
 
             submitted=True
+            return HttpResponseRedirect(reverse('dashboard'))
 
         else:
             print profile_form.errors
@@ -122,6 +124,7 @@ def submit_abstract(request):
 
             abstract_form.save()
 
+            return HttpResponseRedirect(reverse('dashboard'))
             submitted = True
 
 

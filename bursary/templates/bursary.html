@@ -4,12 +4,16 @@
     <section id="bursary" class="register-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-offset-2">
+                <div class="form-box square-box col-lg-8 col-sm-offset-2">
+                    <br/>
 					<h2>Bursary Application Form</h2>
+                    <hr class="form-line">
 					
 					{% if submitted %}
+                    <form>
 					<p>Thank you for submitting an application</p>
-					<a href="{% url 'dashboard' %}">Return to dasboard</a>
+					<p><a href="{% url 'dashboard' %}">Return to dasboard</a></p>
+                    </form>
 					{% else %}
 
 					<form id = "bursary" method="post" action="/bursary/" enctype="multipart/form-data">
@@ -25,6 +29,8 @@
 						<a class="btn btn-primary page-scroll" href="{% url 'home' %}">Cancel</a>
 					</div>
 					{% endif %}
+                    <br/>
+                    <br/>
 
 				</div>
 			</div>

@@ -5,6 +5,9 @@ from sponsors.models import Sponsor
 from authors.models import UserProfile, Abstract
 from django.contrib.auth.models import User
 
+def registration(request):
+    return render(request, 'registration.html', {})
+
 def programme(request):
     speakers = Speaker.objects.order_by('?')[:]
     themes = Theme.objects.all()

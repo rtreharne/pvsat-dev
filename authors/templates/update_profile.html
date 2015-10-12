@@ -4,12 +4,16 @@
     <section id="register" class="register-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-offset-2">
+                <div class="form-box square-box col-lg-8 col-sm-offset-2">
+                    <br/>
 					<h2>Update Profile</h2>
+                    <hr class="form-line">
 
 					{% if submitted%}
+                    <form>
 					<p>Your profile has been updated</p>
-					<a href="{% url 'dashboard' %}">Return to dashboard</a>
+					<p><a href="{% url 'dashboard' %}">Return to dashboard</a></p>
+                    </form>
 					{% else %}
 
 					<form id = "profile_form" method="post" action="/authors/update_profile/" enctype="multipart/form-data">
@@ -26,6 +30,10 @@
 						<a class="btn btn-primary page-scroll" href="{% url 'dashboard' %}">Cancel</a>
 					</div>
 					{% endif %}
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
 
 				</div>
 			</div>
