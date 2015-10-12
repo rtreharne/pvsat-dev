@@ -148,10 +148,10 @@ def register(request):
             user = user_form.save(commit=False)
 
             #Email confirmation to user
-            subject = 'Abstract Submission Confirmation: %s' % (abstract.unique_id)
+            subject = 'PVSAT: Author registration confirmationi'
 
-            text_content = render_to_string("user_sub_conf.txt", {'abstract': abstract, 'URL': settings.SITE_URL})
-            html_content = render_to_string("user_sub_conf.html", {'abstract': abstract, 'URL': settings.SITE_URL})
+            text_content = render_to_string("user_sub_conf.txt", {'user': user, 'URL': settings.SITE_URL})
+            html_content = render_to_string("user_sub_conf.html", {'user': user, 'URL': settings.SITE_URL})
 
             email = abstract.author.user.email
 
@@ -160,9 +160,9 @@ def register(request):
 
             #Email confirmation to admin
 
-            subject = 'Abstract %s submitted by %s %s' % (abstract.unique_id, abstract.author.user.first_name, abstract.author.user.last_name)
+            subject = 'New Author'
 
-            text_content = render_to_string("user_to_admin.txt", {'abstract': abstract, 'URL': settings.SITE_URL})
+            text_content = render_to_string("user_to_admin.txt", {'user': user, 'URL': settings.SITE_URL})
 
             msg2 = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
 
@@ -170,7 +170,6 @@ def register(request):
                 msg1.send()
                 msg2.send()
 
-            user.save()
 
             profile.user = user
 
