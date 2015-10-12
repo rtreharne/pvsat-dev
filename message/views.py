@@ -13,8 +13,7 @@ def message(request):
 		if contact_form.is_valid():
 			message = contact_form.save()
 			sent = True
-            if settings.EMAIL_STATUS:
-                send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
+            send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
 		else:
 			print contact_form.errors
 	else:
