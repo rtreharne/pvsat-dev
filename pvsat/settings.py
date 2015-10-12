@@ -115,3 +115,5 @@ EMAIL_HOST_USER = 'rob.pvsat@gmail.com'
 EMAIL_HOST_PASSWORD = 'm8ly4CeL30{95QA'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+SITE_URL = 'http://robtreharne.pythonanywhere.com'
