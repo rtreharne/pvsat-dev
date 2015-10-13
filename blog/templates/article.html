@@ -15,7 +15,12 @@
                     <div id="{{article.id}}" class="col-lg-12">
                     <h2>{{article.title}}</h2>
                     
-					<a href="/programme/profiles/{{article.author.author.user.id}}"><img class="profile-pic" src="/media/{{article.author.author.picture}}"></a>
+                    {% thumbnail article.author.author.picture "300x300" crop="center" as im %}
+                    <p>
+                    <div style="text-align:left; margin-right: 5px;">
+                        <img class="profile-pic" style="box-shadow: 0 0 10px black"src="{{im.url}}">
+                    </div>
+                    {% endthumbnail %}
 					<h4>Article by {{article.author.author.user.first_name}} {{article.author.author.user.last_name}}, {{article.author.author.affiliation}}</h4>
                     {% if article.pic %}
                    
