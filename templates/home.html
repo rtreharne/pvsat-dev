@@ -31,7 +31,7 @@
                     <div class="col-sm-4 block">
                         <ul class="list-unstyled">
                         <li><a class="btn btn-primary page-scroll" href="{% url 'programme' %}">Call for Abstracts</a></li>
-                            <li><a class="btn btn-primary page-scroll" href="">Register to Attend</a></li>
+                        <li><a class="btn btn-primary page-scroll" href="{% url 'registration' %}">Register to Attend</a></li>
                         <li><a class="btn btn-primary page-scroll" href="{% url 'bursary' %}">Apply for a Bursary</a></li>
                         </ul>
                         <br />
@@ -104,7 +104,7 @@
                         {% for sponsor in sponsors %}
                             <div class="col-md-4 col-sm-6 col-xs-12 center block">
                                     {% thumbnail sponsor.logo "200x100"  as im %}
-                                    <img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}};">
+                                    <img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; width: 100%;">
                                     {% endthumbnail %}
 
                             </div>
