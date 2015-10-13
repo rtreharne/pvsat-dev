@@ -9,9 +9,10 @@
                 <br />
                 
                 <div class="col-lg-8 col-lg-offset-2 block">
-                    <div class="square-box blog-box blog-box inset">
+                    <div class="square-box blog-box blog-box inset" style="overflow:hidden;">
                     <h2>Conference Blog</h2>
                         <div class="col-lg-12">
+                    <hr>
                             {% for article in articles %}
                             <h3><a href="/blog/{{article.id}}">{{article.title}}</a></h3>
                             <h4 style="font-size: 1.2em;">Article by {{article.author.author.user.first_name}} {{article.author.author.user.last_name}}, {{article.author.author.affiliation}}</h4>
@@ -25,7 +26,6 @@
                                 <p>{{article.body|slice:":350"}} ... </a></p>
                                 <a class="btn btn-primary page-scroll" href="{% url 'articles' %}{{article.id}}/">Read More</a>
                             <hr />
-                            <br />
                             {% endfor %}
                         </div>
                     </div>
