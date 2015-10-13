@@ -10,8 +10,10 @@
                     <hr class="form-line">
 
 					{% if registered %}
-					<p>Thank you for registering</p>
-                    <a href="{% url 'login' %}">Proceed to login</a> | <a href="{% url 'home' %}">Return to homepage</a>
+                    <form>
+                        <p>Thank you for registering</p>
+                        <p><a href="{% url 'login' %}">Proceed to login</a> | <a href="{% url 'home' %}">Return to homepage</a></p>
+                    </form>
 					{% else %}
 
 					<form id = "user_form" method="post" action="/authors/register/" enctype="multipart/form-data">

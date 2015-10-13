@@ -552,3 +552,8 @@ p.tag-selected {
 form p a    {
     color: blue !important;
 }
+
+iframe {
+    border: 2px solid white;
+    box-shadow: 0 0 10px white;
+}

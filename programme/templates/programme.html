@@ -10,7 +10,7 @@
                 
             <div class="col-lg-12 block">
                 <div class="col-md-8">
-                    <div class="square-box blog-box" style=" background-color:#234867; margin-bottom:30px;">
+                    <div class="square-box blog-box" style=" background-color:#234867; margin-bottom:30px; overflow: hidden;">
                         <div class="col-lg-12">
                             <p>12<sup>th</sup> Photovoltaic Science, Application and Technology Conference</p>
                             <h1>Call for Abstracts</h1>
@@ -22,7 +22,13 @@
                             {% endfor %}
                             </ol>
                             <br/>
-                            <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit an Abstract</a>
+                            <div class="col-md-12">
+                                <iframe style="max-height: 350px;" src="https://www.youtube.com/embed/aHkLydQFLz0" frameborder="0" allowfullscreen></iframe> 
+                            </div>
+                            <div class="col-md-12">
+                                <a class="btn btn-primary page-scroll" href="/media/forms/abstract_template.docx"><i class="fa fa-file"></i> Abstract Template</a>
+                                <a class="btn btn-primary page-scroll" style="margin-left: 5px;" href="{% url 'submit_abstract' %}">Submit an Abstract</a>
+                            </div>
                         </div>
                     </div>
 
@@ -48,9 +54,9 @@
                 <div class="col-md-4">
                     <div class="square-box test-box speaker-box block" style="background-color:white; margin-bottom: 30px;">
                         <h2>Exhibitors</h2>
-                            <a class="btn btn-primary page-scroll" href="">Become an Exhibitor</a>
+                            <a class="btn btn-primary page-scroll" href="/media/forms/Exhibitor_Registration.docx">Become an Exhibitor</a>
                         <h2>Sponsors</h2>
-                            <a class="btn btn-primary page-scroll" href="">Become an Sponsor</a>
+                            <a class="btn btn-primary page-scroll" href="/media/forms/Sponsorship_Info.docx">Become an Sponsor</a>
                         <br/>
                         <br/>
                         {% for sponsor in sponsors %}
