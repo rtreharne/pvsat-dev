@@ -19,7 +19,7 @@ def validate_file_extension(value):
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     affiliation = models.CharField(max_length=128, blank = True)
-    picture = ImageField(upload_to='user_images', blank=True, null=True)
+    picture = ImageField(upload_to='user_images', null=True)
     url = models.URLField(blank=True, help_text="http://mygroupwebsite.com")
     linkedin = models.URLField(blank=True)
     twitter = models.CharField(max_length=20, blank=True, help_text='e.g. "@pvsat-12"')
