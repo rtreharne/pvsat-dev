@@ -53,10 +53,10 @@
                     <h4>Stephenson Institute for Renewable Energy, University of Liverpool</h4>
                     <p>A one day workshop ideal for early PhD students in the field of PV. Organised by the EPSRC SuperSolar PV Hub in association with PVSAT</p>
                     <br/>
-                    <div class="col-md-6">
+                    <div class="col-md-6 center" style="margin-bottom: 10px;">
                     <a class="btn btn-primary page-scroll" href="http://www.cdt-pv.org/events/4/" target="_blank">More Info</a>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 center" style="margin-bottom: 10px;">
                     <a class="btn btn-primary page-scroll" href="">Register</a>
                     </div>
                     </div>
@@ -70,12 +70,13 @@
                             <h2>Conference Blog</h2>
                             <h3>{{articles.title}}</h3>
                             <h4><i>{{articles.author.author.user.first_name}} {{articles.author.author.user.last_name}}</i></h3>
-                            <br/>
                             
                             {% thumbnail articles.author.author.picture "300x300" crop="center" as im %}
                             <p>
-                            <div style="float:left; text-align:center; margin-right: 5px;">
+                            <br/>
+                            <div class="col-sm-4 col-xs-12" style="float:left; text-align:center; margin-right: 5px;">
                             <img class="profile-pic" src="{{im.url}}">
+                            <br/>
                             </div>
                             {% endthumbnail %}
 
@@ -113,7 +114,7 @@
                         {% for sponsor in sponsors %}
                             <div class="col-md-4 col-sm-6 col-xs-12 center block">
                                     {% thumbnail sponsor.logo "200x100"  as im %}
-                                    <img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}};">
+                                    <img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;">
                                     {% endthumbnail %}
 
                             </div>
