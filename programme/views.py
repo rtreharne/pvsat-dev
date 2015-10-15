@@ -3,6 +3,7 @@ from programme.models import Speaker, Theme
 from exhibitors.models import Exhibitor
 from sponsors.models import Sponsor
 from authors.models import UserProfile, Abstract
+from committee.models import Member
 from django.contrib.auth.models import User
 
 def registration(request):
@@ -14,11 +15,13 @@ def programme(request):
     exhibitors = Exhibitor.objects.all()
     sponsors = Sponsor.objects.all()
     authors = UserProfile.objects.order_by('user__last_name')
+    committee = Member.objects.all()
     programme_dict = {'speakers': speakers,
                       'themes': themes,
                       'exhibitors': exhibitors,
                       'sponsors': sponsors,
-                      'authors': authors}
+                      'authors': authors,
+                      'committee': committee}
     return render(request, 'programme.html', programme_dict)
 
 def abstracts(request):

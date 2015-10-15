@@ -26,21 +26,43 @@
                                 <p>Here's our video guide on how to submit an abstract.</p>
                                 <iframe style="max-height: 350px;" src="https://www.youtube.com/embed/aHkLydQFLz0" frameborder="0" allowfullscreen></iframe> 
                             </div>
-                            <div class="col-md-12">
-                                <a class="btn btn-primary page-scroll" href="/media/forms/abstract_template.docx"><i class="fa fa-file"></i> Abstract Template</a>
-                                <a class="btn btn-primary page-scroll" style="margin-left: 5px;" href="{% url 'submit_abstract' %}">Submit an Abstract</a>
+                            <div class="col-md-offset-2 col-md-8 center">
+                                <div class="col-md-6" style="margin-bottom: 10px;">
+                                    <a class="btn btn-primary page-scroll" href="/media/forms/abstract_template.docx"><i class="fa fa-file"></i> Abstract Template</a>
+                                </div>
+                                <div class="col-md-6" style="margin-bottom: 10px;">
+                                    <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit an Abstract</a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    
                     <div class="square-box speaker-box block;" style="overflow:hidden; margin-bottom: 30px;">
-                        <h2>Guest Speakers</h2>
+                    <h2>Guest Speakers</h2>
                     <br/>
                     {% for speaker in speakers %}
                         <div class="col-md-3 col-sm-4 col-xs-12 center block">
                                 {% thumbnail speaker.pic "300x300" crop="center" as im %}
                                 <img class="profile-pic" src="{{im.url}}">
                                 <p>{{speaker.forename}}
+                                   {{speaker.surname}}
+                                   </br>
+                                   ({{speaker.affiliation}})</p>
+                                {% endthumbnail %}
+                        </div>
+                    {% endfor %}
+                    <br />
+                    <br />
+                    </div>
+                    <div class="square-box speaker-box block;" style="overflow:hidden; margin-bottom: 30px;background-color:#B13896;">
+                        <h2>PVSAT-12 Committee</h2>
+                    <br/>
+                    {% for speaker in committee %}
+                        <div class="col-md-3 col-sm-4 col-xs-6 center block">
+                                {% thumbnail speaker.pic "300x300" crop="center" as im %}
+                                <img class="profile-pic" src="{{im.url}}">
+                                <p style="min-height: 61px;">{{speaker.forename}}
                                    {{speaker.surname}}
                                    </br>
                                    ({{speaker.affiliation}})</p>
