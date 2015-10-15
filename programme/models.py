@@ -2,8 +2,8 @@ from django.db import models
 from sorl.thumbnail import ImageField
 
 class Speaker(models.Model):
-    forename = models.CharField(max_length=128)
-    surname = models.CharField(max_length=128, unique = True)
+    forename = models.CharField(max_length=128, unique=False)
+    surname = models.CharField(max_length=128, unique=False)
     affiliation = models.CharField(max_length=128)
     title = models.CharField(max_length=128, blank=True)
     pic = ImageField(upload_to='logo_images', blank=True)
