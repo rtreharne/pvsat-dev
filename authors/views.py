@@ -139,11 +139,12 @@ def submit_abstract(request):
 
 def register(request):
 
-    registered = False
+    registered = False 
 
     if request.method == 'POST':
         user_form = UserForm(data=request.POST)
         profile_form = UserProfileForm(data=request.POST)
+
 
         if user_form.is_valid() and profile_form.is_valid():
 
@@ -178,8 +179,6 @@ def register(request):
             if settings.EMAIL_STATUS:
                 msg1.send()
                 msg2.send()
-
-
 
             registered = True
 
