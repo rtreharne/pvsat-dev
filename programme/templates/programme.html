@@ -64,8 +64,10 @@
                                 <img class="profile-pic" src="{{im.url}}">
                                 <p style="min-height: 61px;">{{speaker.forename}}
                                    {{speaker.surname}}
-                                   </br>
-                                   ({{speaker.affiliation}})</p>
+                                <p>
+                                <div class="hidden-xs">
+                                   ({{speaker.affiliation}})
+                                </div>
                                 {% endthumbnail %}
                         </div>
                     {% endfor %}
