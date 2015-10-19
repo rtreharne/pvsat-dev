@@ -8,7 +8,7 @@
                 <br />
                 <br />
                 <div class="col-md-4 block" style=" text-align: center">
-                <div class="col-lg-12 square-box splash-box block " style="min-height: 445px;background-color: #234867">
+                <div class="col-lg-12 square-box splash-box block " style="min-height: 520px;background-color: #234867">
                 <div style="max-width:500px;margin:auto;">
 					<h1>{{user.first_name}} {{user.last_name}}</h1>
                     <br />
@@ -56,7 +56,7 @@
 
 
                 <div class="col-md-8" >
-                    <div class="square-box splash-box block"style="background-color: #3896B1; min-height:445px;">
+                    <div class="square-box splash-box block"style="background-color: #3896B1; min-height:10px;">
                     <h2>My Abstracts</h2>
                     {% if abstracts %}
                     <div class="col-lg-12">
@@ -80,8 +80,26 @@
 					    <p>No abstracts submitted<p>
 				    {% endif %}
                     <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
-                    <br/>
-                    <br/>
+                    <hr />
+                    <h2>Author Guidance</h2>
+                    <p>Abstracts should be prepared in English, single-spaced, using Times New Roman 10pt font with margins of 2.5 cm and using Microsoft Word. The abstract must not exceed a single A4 page.</p>
+                    <p>Please name your abstract file according to the surname of the corresponding author and a running number if more than one paper is to be submitted, e.g. "Surname1.docx".</p>
+                    <p>Selected papers evidencing high quality contributions in PV materials and PV systems will be invited to submit their manuscripts to special issues of <a href="http://www.maneyonline.com/loi/ema" target="_blank">Energy Materials Journal</a> or IET Journal respectively.</p>
+
+                    </div>
+                    <div class="square-box splash-box block"style="background-color: #B14138; min-height:0px; margin-top:20px; padding-top: 0px;">
+                        <div class="col-md-6 center">
+                            <ul class="list-unstyled" style="font-size: 1.2em;">
+                                <li><strong>Abstract Submission</strong>: Fri 11 Dec 2015</li>
+                                <li><strong>Author Notification</strong>: Mon 01 Feb 2016</li>
+                            </ul>
+                    </div>
+                        <div class="col-md-6 center">
+                            <ul class="list-unstyled" style="font-size: 1.2em;">
+                                <li><strong>Early Bird Reg.</strong>: Fri 11 Mar 2016</li>
+                                <li><strong>Paper Submission</strong>: Fri 11 Mar 2016</li>
+                            </ul>
+                    </div>
                     </div>
                     
                 </div>

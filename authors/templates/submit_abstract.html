@@ -13,11 +13,6 @@
 					<p>Thank you for submitting an abstract</p>
 					<a href="{% url 'dashboard' %}">Return to dasboard</a>
 					{% else %}
-					<p>
-					<a type="button" class="btn btn-primary" href="/media/forms/abstract_template.docx">
-						<span class="glyphicon glyphicon-file"></span> Template</span> 
-					</a>
-					</p>
 
 					<form id = "abstract" method="post" action="/authors/submit_abstract/" enctype="multipart/form-data">
 

@@ -39,7 +39,8 @@ class Abstract(models.Model):
     unique_id = models.CharField(max_length=11,null=True, blank=True, unique=True)
     
     DELIVERY_CHOICE = (('Oral', 'Oral'), ('Poster', 'Poster'))
-    delivery = models.CharField(max_length=6, choices=DELIVERY_CHOICE, default='Oral', help_text='N.B. We require that a paper be submitted for each abstract - even if you request a poster presentation.')
+    delivery = models.CharField(max_length=6, choices=DELIVERY_CHOICE, default='Oral', help_text='N.B. We require that a paper be submitted for each abstract - even if you request a poster presentation.', verbose_name="Preference")
+    delivery_decision = models.CharField(max_length=6, choices=DELIVERY_CHOICE, default='Oral', null = True, blank=True, verbose_name="Decision")
 
     STATUS = (('Awaiting Decision', 'Awaiting decision'), ('Accepted', 'Accept'), ('Rejected', 'Reject') )
     status = models.CharField(max_length=25, choices=STATUS, default='Awaiting Decision')

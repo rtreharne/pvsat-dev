@@ -78,6 +78,7 @@ def submit_abstract(request):
         if abstract_form.is_valid():
             abstract = abstract_form.save(commit=False)
             abstract.author = UserProfile.objects.get(user=request.user)
+            abstract.delivery_decision=abstract.delivery
 
             if abstract.tags == "":
                 abstract.tags = None
