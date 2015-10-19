@@ -6,6 +6,6 @@ Your abstract's unique identifier is {{abstract.unique_id}}. Please be sure to q
 
 You will be notified whether your abstract has been accepted before 1st Feb 2016.
 
-If you have any question please don't hesitate to contact us.
+If you have any question please don't hesitate to contact us : {{URL}}/contact/.
 
 With thanks, from the PVSAT team.
