@@ -16,7 +16,7 @@ def message(request):
             subject = 'PVSAT Enquiry from %s %s' % (message.first_name, message.last_name)
 
 
-            send_mail(subject, message, '', [settings.ADMIN_EMAIL], fail_silently=False)
+            send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
             sent = True
         else:
             print contact_form.errors
