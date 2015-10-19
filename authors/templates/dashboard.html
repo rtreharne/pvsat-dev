@@ -57,36 +57,37 @@
 
                 <div class="col-md-8" >
                     <div class="square-box splash-box block"style="background-color: #3896B1; min-height:10px;">
-                    <h2>My Abstracts</h2>
-                    {% if abstracts %}
-                    <div class="col-lg-12">
-                    {% for abstract in abstracts %}
-                    <h3>{{ abstract.title }}</h3>
-                    <p>{{ abstract.authors }}</p>
-                    <!--
-                    <div class="tag-box">
-                        {% for tag in abstract.tags_as_list %}
-                        <a href=""><p class="tag">{{tag}}</p></a>
-                        {% endfor %}
+                        <h2>My Abstracts</h2>
+                        {% if abstracts %}
+                        <div class="col-lg-12">
+                            {% for abstract in abstracts %}
+                                <h3>{{ abstract.title }}</h3>
+                                <p>{{ abstract.authors }}</p>
+                                <!--
+                                <div class="tag-box">
+                                    {% for tag in abstract.tags_as_list %}
+                                    <a href=""><p class="tag">{{tag}}</p></a>
+                                    {% endfor %}
+                                </div>
+                                -->
+                                <p><strong>{{abstract.unique_id}}</strong> | Submitted for: <strong>{{abstract.delivery}} presentation</strong> | {{abstract.status}}</p>
+                                  {% if abstract.status == 'Accepted' %}
+                                      <a class="btn btn-success page-scroll" href="#">Submit Paper</a>
+                                  {% endif %}
+                                <hr>
+                            {% endfor %}
+                            {% else %}
+                                <p>No abstracts submitted<p>
+                            {% endif %}
+                            <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
+                            <hr />
+                            <h2>Author Guidance</h2>
+                            <p>Abstracts should be prepared in English, single-spaced, using Times New Roman 10pt font with margins of 2.5 cm and using Microsoft Word. The abstract must not exceed a single A4 page.</p>
+                            <p>Please name your abstract file according to the surname of the corresponding author and a running number if more than one paper is to be submitted, e.g. "Surname1.docx".</p>
+                            <p>Selected papers evidencing high quality contributions in PV materials and PV systems will be invited to submit their manuscripts to special issues of <a href="http://www.maneyonline.com/loi/ema" target="_blank">Energy Materials Journal</a> or IET Journal respectively.</p>
+                        </div>
                     </div>
-                    -->
-                    <p><strong>{{abstract.unique_id}}</strong> | Submitted for: <strong>{{abstract.delivery}} presentation</strong> | {{abstract.status}}</p>
-                      {% if abstract.status == 'Accepted' %}
-                          <a class="btn btn-success page-scroll" href="#">Submit Paper</a>
-                      {% endif %}
-                    <hr>
-                    {% endfor %}
-					{% else %}
-					    <p>No abstracts submitted<p>
-				    {% endif %}
-                    <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
-                    <hr />
-                    <h2>Author Guidance</h2>
-                    <p>Abstracts should be prepared in English, single-spaced, using Times New Roman 10pt font with margins of 2.5 cm and using Microsoft Word. The abstract must not exceed a single A4 page.</p>
-                    <p>Please name your abstract file according to the surname of the corresponding author and a running number if more than one paper is to be submitted, e.g. "Surname1.docx".</p>
-                    <p>Selected papers evidencing high quality contributions in PV materials and PV systems will be invited to submit their manuscripts to special issues of <a href="http://www.maneyonline.com/loi/ema" target="_blank">Energy Materials Journal</a> or IET Journal respectively.</p>
 
-                    </div>
                     <div class="square-box splash-box block"style="background-color: #B14138; min-height:0px; margin-top:20px; padding-top: 0px;">
                         <div class="col-md-6 center">
                             <ul class="list-unstyled" style="font-size: 1.2em;">
