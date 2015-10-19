@@ -9,5 +9,5 @@ ABSTRACT:
 
 {{abstract.abstract}}
 
-FILE: http://{{URL}}/media/abstract_uploads/{{abstract.upload}}
+FILE: {{URL}}media/abstract_uploads/{{abstract.upload}}
 
