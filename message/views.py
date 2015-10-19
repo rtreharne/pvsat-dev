@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.template.loader import render_to_string
 from message.forms import MessageForm
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMultiAlternatives
 from django.conf import settings
 
 def message(request):
