@@ -15,8 +15,14 @@ def message(request):
 
             subject = 'PVSAT Enquiry from %s %s' % (message.first_name, message.last_name)
 
+            text_content = render_to_string("message_temp.txt", {'message' : message})
 
-            send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
+            msg = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
+
+            if settings.EMAIL_STATUS:
+                msg.send()
+
+            #send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
             sent = True
         else:
             print contact_form.errors

@@ -1,0 +1,8 @@
+ENQUIRY
+
+FROM: {{message.first_name}} {{message.last_name}}
+EMAIL: {{message.email}}
+
+MESSAGE: {{message.message}}
+
+
