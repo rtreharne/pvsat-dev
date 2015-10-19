@@ -12,9 +12,12 @@ def message(request):
 
         if contact_form.is_valid():
             message = contact_form.save()
-            sent = True
 
-            send_mail(request.POST['subject'], request.POST['message'], '', [settings.ADMIN_EMAIL], fail_silently=False)
+            subject = 'PVSAT Enquiry from %s %s' % (message.first_name, message.last_name)
+
+
+            send_mail(subject, message, '', [settings.ADMIN_EMAIL], fail_silently=False)
+            sent = True
         else:
             print contact_form.errors
     else:
