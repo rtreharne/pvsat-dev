@@ -557,4 +557,6 @@ iframe {
     border: 2px solid white;
     box-shadow: 0 0 10px white;
 }
-
+p.speaker-caption {
+    height: 60px;
+}
