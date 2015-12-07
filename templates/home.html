@@ -68,7 +68,7 @@
              </div>
             
             <div class="col-lg-12 block">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="square-box blog-box">
                         <div class="col-lg-12">
                             <h2>Conference Blog</h2>
@@ -79,26 +79,26 @@
                             <p>
                             <br/>
                             <div class="col-sm-4 col-xs-12" style="float:left; text-align:center; margin-right: 5px;">
-                            <img class="profile-pic" src="{{im.url}}">
+                            <img class="profile-pic" style="width:100%;" src="{{im.url}}">
                             <br/>
                             </div>
                             {% endthumbnail %}
 
-                            {{articles.body|slice:":455"}} ...</p>
+                            {{articles.body|slice:":375"}} ...</p>
                             <br />
                             <a class="btn btn-primary page-scroll" href="{% url 'articles' %}{{articles.id}}/">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="square-box speaker-box block">
                         <h2>Guest Speakers</h2>
                     <br/>
                     {% for speaker in speakers %}
-                        <div class="col-md-4 col-sm-4 col-xs-12 center block">
+                        <div class="col-md-3 col-sm-4 col-xs-12 center block">
                                 {% thumbnail speaker.pic "300x300" crop="center" as im %}
                                 <img class="profile-pic" src="{{im.url}}">
-                                <p>{{speaker.forename}}
+                                <p class="speaker-caption">{{speaker.forename}}
                                    {{speaker.surname}}
                                    </br>
                                    ({{speaker.affiliation}})</p>
