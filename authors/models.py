@@ -9,12 +9,12 @@ from django.core.exceptions import ValidationError
 def validate_file_extension(value):
     import os
     ext = os.path.splitext(value.name)[1]
-    valid_extensions = ['.doc', '.docx']
+    valid_extensions = ['.doc', '.docx', '.pdf']
     filesize = value.file.size
     if filesize > 5*1024*1024:
         raise ValidationError(u'Max file size 5MB.')
     if not ext in valid_extensions:
-        raise ValidationError(u'File type is not supported. Files must be .doc or .docx')
+        raise ValidationError(u'File type is not supported. Files must be .doc, .docx or .pdf')
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
