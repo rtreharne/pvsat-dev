@@ -6,6 +6,8 @@ Your abstract's unique identifier is {{abstract.unique_id}}. Please be sure to q
 
 You will be notified whether your abstract has been accepted before 1st Feb 2016.
 
+Don't forget, your usernames i {{abstract.author.user}}. You will need this (and your password) to login to check the status of your abstract(s) in fugure.
+
 If you have any question please don't hesitate to contact us : {{URL}}/contact/.
 
 With thanks, from the PVSAT team.
