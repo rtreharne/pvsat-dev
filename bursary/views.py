@@ -31,7 +31,7 @@ def application(request):
 
             text_content = render_to_string("burs_to_admin.txt", {'bursary': bursary, 'URL': settings.SITE_URL})
 
-            msg2 = EmailMultiAlternatives(subject, text_content, '', ['R.Treharne@liverpool.ac.uk'])#[settings.ADMIN_EMAIL])
+            msg2 = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
 
             if settings.EMAIL_STATUS:
                 msg1.send()
