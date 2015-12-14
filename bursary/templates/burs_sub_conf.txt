@@ -1,0 +1,9 @@
+Dear {{bursary.first_name}},
+
+Your application for a PVSAT bursary has been successfully submitted. Thank you. 
+
+You will be notified whether your application has been successful before 1st Feb 2016.
+
+If you have any question please don't hesitate to contact us : {{URL}}/contact/.
+
+With thanks, from the PVSAT team.

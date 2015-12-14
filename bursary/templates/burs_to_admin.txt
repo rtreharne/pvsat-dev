@@ -1,0 +1,8 @@
+Bursary Application Submitted
+
+APPLICANT: {{bursary.first_name}} {{bursary.last_name}}
+EMAIL: {{bursary.email}}
+AFFILIATION: {{bursary.institution}}
+SUPERVISOR: {{bursary.supervisor}}
+
+
