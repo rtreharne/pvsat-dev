@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="login" class="register-section">
+        <div class="container">
+            <div class="row">
+                <div class="form-box square-box col-lg-8 col-sm-offset-2" style="height:auto;">
+                    <br/>
+					<h2>Login</h2>
+                    <hr class="form-line">
+					{% if invalid %}
+					<p>Oops, invalid username/password. Please try again.</p>
+					{% endif %}
+
+					<form id="login_form" method="post" action="/authors/login/">
+						{% csrf_token %}
+						<li>
+						    <label for="username">Username:</label>
+							<input id="username" maxlength="30" name="username" type="text" value="">
+						</li>
+						<li>
+						    <label for="password">Password:</label>
+							<input id="password" maxlength="30" name="password" type="password" value = "">
+						</li>
+						<input class="btn btn-primary" type="submit" value="Login" />
+                    <p>Need to register? <a href="{% url 'register' %}">Click here</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
