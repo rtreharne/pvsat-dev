@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section id="register" class="register-section">
+        <div class="container">
+            <div class="row">
+                <div class="form-box col-lg-8 square-box col-sm-offset-2">
+                    <br/>
+                    <h1>Submit Abstract</h1>
+                    <hr class="form-line" style="border-color: #CACACA; margin: 20px 50px;">
+					
+					{% if submitted %}
+					<p>Thank you for submitting an abstract</p>
+					<a href="{% url 'dashboard' %}">Return to dasboard</a>
+					{% else %}
+
+					<form id = "abstract" method="post" action="/authors/submit_abstract/" enctype="multipart/form-data">
+
+						{% csrf_token %}
+
+						{{ abstract_form.as_ul}}
+
+						<input class="btn btn-primary page-scroll" type="submit" name="submit" value="Submit" />
+
+					</form>
+					<div class="col-lg-12 center">
+						<a class="btn btn-primary page-scroll" href="{% url 'dashboard' %}">Cancel</a>
+					</div>
+					{% endif %}
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
