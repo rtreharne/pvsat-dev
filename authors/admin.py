@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class AbstractAdmin(admin.ModelAdmin):
-    list_display = ( 'short_title', 'view_id', 'view_link', 'affiliation', 'status', 'delivery','delivery_decision', 'date', 'author_registered')
+    list_display = ( 'short_title', 'view_id', 'view_link', 'view_email', 'affiliation', 'status', 'delivery','delivery_decision', 'date', 'author_registered')
 
     def affiliation(self, obj):
         return ("%s" % obj.author.affiliation)
@@ -18,6 +18,11 @@ class AbstractAdmin(admin.ModelAdmin):
         return u"<a href='/programme/profiles/%d'>%s</a>" % (obj.author.user.id, obj.author.user.last_name)
     view_link.short_description = 'author'
     view_link.admin_order_field = 'author__user__last_name'
+    view_link.allow_tags = True
+
+    def view_email(self, obj):
+        return u"<a href='mailto:%s'>%s</a>" % (obj.author.user.email, obj.author.user.email)
+    view_email.short_description = 'author email'
     view_link.allow_tags = True
 
     def view_id(self, obj):
