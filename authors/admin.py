@@ -23,7 +23,7 @@ class AbstractAdmin(admin.ModelAdmin):
     def view_email(self, obj):
         return u"<a href='mailto:%s'>%s</a>" % (obj.author.user.email, obj.author.user.email)
     view_email.short_description = 'author email'
-    view_link.allow_tags = True
+    view_email.allow_tags = True
 
     def view_id(self, obj):
         return u"<a href='/media/%s' target='_blank'>%s</a>" % (obj.upload, obj.unique_id)
