@@ -4,10 +4,11 @@ from authors.models import Abstract
 def home(request, key=None):
     tags_list = []
     
-    if key != None:
+    if key != None and key != 'alltag':
+        #key=key[:4]
         abstracts = Abstract.objects.filter(tags__contains=key)
     else:
-        abstracts = Abstract.objects.all()
+        abstracts = Abstract.objects.order_by('?')
 
     for abstract in abstracts:
         if abstract.tags != None:
@@ -18,7 +19,13 @@ def home(request, key=None):
     for i in range(len(tags_1D)):
         tags_1D[i] = str(tags_1D[i])
 
+    if key == None:
+        tags_1D = tags_1D[::8]
+
     tags_1D = sorted(set(tags_1D))
     
-    return render(request, 'proceedings.html', {'abstracts': abstracts, 'tags': tags_1D})
+    return render(request, 'proceedings.html', {'abstracts': abstracts, 'tags': tags_1D, 'key': key})
+
+
+#def abstract(request, key=None):
 

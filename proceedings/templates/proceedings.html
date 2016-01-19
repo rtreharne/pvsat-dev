@@ -3,14 +3,17 @@
 
 {% block content %}
     <div class="container">
-        <div class="row">
+        <div class="row" style="margin-top: 50px;">
             <div class="col-md-3" id = "leftCol">
-                <div class="left" style="margin-top: 50px; text-align: left;" id="sidebar">
+                <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
                 {% for tag in tags %}
                     {% if not tag == '' %}
-                        <a href="/proceedings/{{tag}}/"><p title="{{tag}}" class="tag">{{tag|slice:":15"}}</p></a>
+                        <a href="/proceedings/{{tag}}/"><p title="{{tag}}"} {% if tag == key %} class="tag tag-selected" {% else %} class="tag" {% endif %}>{{tag|slice:":15"}}</p></a>
                     {% endif %}
                 {% endfor %}
+                {% if not key %}
+                    <a href="alltag"><p>  >> more tags</a></p>
+                {% endif %}
                 </div>
             </div>
             <div class="col-md-9 block" id="mainCol">
