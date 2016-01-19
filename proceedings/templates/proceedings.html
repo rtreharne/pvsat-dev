@@ -6,13 +6,11 @@
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-3" id = "leftCol">
                <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
-                {% if key %}
+                {% if key and not key == 'alltag' %}
                 <ul class="nav nav-stacked">
                   <li><a href="{% url 'proceedings' %}">Full List</a></li>
                 </ul>
                 <hr>
-                {% endif %}
-                {% if key %}
                 <h3>Related Tags:</h3>
                 {% endif %}
                 {% for tag in tags %}
@@ -27,9 +25,23 @@
             </div>
             <div class="col-md-9 block" id="mainCol">
                 {% for abstract in abstracts %}
-                    <div style="overflow:hidden" id="{{abstract.date}}">
-                        <h2 class="left">{{abstract.title}}</h2>
-                        <p>{{abstract.authors}}<p>
+                    <div class="col-md-9 block">
+                        <div style="overflow:hidden" id="{{abstract.date}}">
+                            <h2 class="left">{{abstract.title}}</h2>
+                            <p>{{abstract.authors}}<p>
+                            <h4>{{abstract.author.affiliation}}</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 block">
+                        {% if abstract.author.picture %}
+                            {% thumbnail abstract.author.picture "150x150" crop="center" as im %}
+                            <img class="profile-pic-lg" src="{{im.url}}"/>
+                            {% endthumbnail %}
+                        {% else %}
+                            <div>
+                                {{abstract.author.user.first_name|slice:":1"}}{{abstract.author.user.last_name|slice:":1"}}
+                            </div>
+                        {% endif %}
                     </div>
                     <hr>
                 {% endfor %}
