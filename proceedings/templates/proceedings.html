@@ -5,7 +5,16 @@
     <div class="container">
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-3" id = "leftCol">
-                <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
+               <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
+                {% if key %}
+                <ul class="nav nav-stacked">
+                  <li><a href="{% url 'proceedings' %}">Full List</a></li>
+                </ul>
+                <hr>
+                {% endif %}
+                {% if key %}
+                <h3>Related Tags:</h3>
+                {% endif %}
                 {% for tag in tags %}
                     {% if not tag == '' %}
                         <a href="/proceedings/{{tag}}/"><p title="{{tag}}"} {% if tag == key %} class="tag tag-selected" {% else %} class="tag" {% endif %}>{{tag|slice:":15"}}</p></a>
