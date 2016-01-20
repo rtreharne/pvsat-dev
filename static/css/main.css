@@ -563,3 +563,29 @@ p.speaker-caption {
 .panel {
     margin-bottom: 0;
 }
+div.pic-box {
+	margin-bottom:5px;
+	color:white;
+	font-size:1.6em;
+    width: 70%;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    overflow: hidden;
+	display: inline-block;
+    background: #4679BD;
+	padding-top: 35%;
+	line-height: 0%;
+	padding-bottom:35%;
+	max-height:100px;
+}
+hr {
+    border-top: 1px solid #B9AAAA;
+}
+
+p.oral {
+    color: #4343BF;
+}
+p.poster {
+    color: #10A072;
+}

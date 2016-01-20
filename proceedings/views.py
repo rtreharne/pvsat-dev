@@ -5,8 +5,12 @@ def home(request, key=None):
     tags_list = []
     
     if key != None and key != 'alltag':
-        #key=key[:4]
-        abstracts = Abstract.objects.filter(tags__contains=key)
+        if key == 'poster':
+            abstracts = Abstract.objects.filter(delivery_decision='Poster')
+        elif key == 'oral':
+            abstracts = Abstract.objects.filter(delivery_decision='Oral')
+        else:
+            abstracts = Abstract.objects.filter(tags__contains=key)
     else:
         abstracts = Abstract.objects.order_by('?')
 
