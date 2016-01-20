@@ -6,11 +6,15 @@
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-3" id = "leftCol">
                <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
-                {% if key and not key == 'alltag' %}
                 <ul class="nav nav-stacked">
+                  <li><a href="/proceedings/oral/">Talks</a></li>
+                  <li><a href="/proceedings/poster/">Posters</a></li>
+                {% if key and not key == 'alltag' %}
                   <li><a href="{% url 'proceedings' %}">Full List</a></li>
+                {% endif %}
                 </ul>
                 <hr>
+                {% if key and not key == 'alltag' %}
                 <h3>Related Tags:</h3>
                 {% endif %}
                 {% for tag in tags %}
