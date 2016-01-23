@@ -14,12 +14,13 @@ def home(request, key=None):
         if key == 'poster':
             abstracts = Abstract.objects.filter(delivery_decision='Poster')
         elif key == 'oral':
-            abstracts = Abstract.objects.filter(delivery_decision='Oral')
+            abstracts = Abstract.objects.filter(delivery_decision='Oral').order_by('date')
             for item in session_list:
                 abstract_ordered = []
                 for abstract in abstracts:
                     if item.start <= abstract.date and item.finish >= abstract.date:
                         abstract_ordered.append(abstract)
+                
                 session.append({'session': item, 'abstracts': abstract_ordered})
         else:
             abstracts = Abstract.objects.filter(tags__contains=key)
