@@ -25,7 +25,7 @@
                 {% endif %}
                 {% for tag in tags %}
                     {% if not tag == '' %}
-                        <a href="/proceedings/{{tag}}/"><p title="{{tag}}"} {% if tag == key %} class="tag tag-selected" {% else %} class="tag" {% endif %}>{{tag|slice:":15"}}</p></a>
+                        <a href="/proceedings/{{tag}}/"><p title="{{tag|safe}}"} {% if tag == key %} class="tag tag-selected" {% else %} class="tag" {% endif %}>{{tag|slice:":15"}}</p></a>
                     {% endif %}
                 {% endfor %}
                 {% if not key %}
