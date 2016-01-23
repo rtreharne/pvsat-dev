@@ -589,3 +589,6 @@ p.oral {
 p.poster {
     color: #10A072;
 }
+li.li-sub {
+    padding-left: 20px;
+}

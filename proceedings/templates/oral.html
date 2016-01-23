@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+    <div class="container">
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-md-3" id = "leftCol">
+               <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
+                <ul class="nav nav-stacked">
+                  <li><a href="/proceedings/oral/">Talks</a></li>
+                  {% if key == 'oral' %}
+                      {% for sess in session %}
+                          <li class="li-sub"><a href="#{{sess.session.id}}">{{sess.session}}</a></li>
+                      {% endfor %}
+                  {% endif %}
+                  
+                  <li><a href="/proceedings/poster/">Posters</a></li>
+                {% if key and not key == 'alltag' %}
+                  <li><a href="{% url 'proceedings' %}">Full List</a></li>
+                {% endif %}
+                </ul>
+                <hr>
+                {% if key and not key == 'alltag' %}
+                <h3>Related Tags:</h3>
+                {% endif %}
+                {% for tag in tags %}
+                    {% if not tag == '' %}
+                        <a href="/proceedings/{{tag}}/"><p title="{{tag}}"} {% if tag == key %} class="tag tag-selected" {% else %} class="tag" {% endif %}>{{tag|slice:":15"}}</p></a>
+                    {% endif %}
+                {% endfor %}
+                {% if not key %}
+                    <a href="alltag"><p>  >> more tags</a></p>
+                {% endif %}
+                </div>
+            </div>
+            <div class="col-md-9 block" id="mainCol">
+                {% if key == 'oral' %}
+                    {% for sess in session %}
+                        <div style="overflow: hidden; padding: 0 15px; padding-bottom: 10px;background-color:#dbe2ea;">
+                            <h1 id="{{sess.session.id}}">{{sess.session}}</h1>
+                            <h4>{{sess.session.start|date:'M d, H:i'}}</h4>
+                            <p><strong>Chair:</strong> {{sess.session.chair.forename}} {{sess.session.chair.surname}}, {{sess.session.chair.affiliation}}</p>
+                        </div>
+                        {% for abstract in sess.abstracts %}
+                            <div style="overflow: hidden;">
+                            <div class="col-md-9 block">
+                                <div style="overflow:hidden" id="{{abstract.date}}">
+                                    <h2 class="left">{{abstract.title}}</h2>
+                                    <p>{{abstract.authors}}<p>
+                                    <h4>{{abstract.author.affiliation}}</h4>
+                                    <p class="
+                                        {% if abstract.delivery_decision = 'Oral' %}
+                                        oral
+                                        {% else %}
+                                        poster
+                                        {% endif %}
+                                        ">
+                                        {{abstract.delivery_decision}} Presentation | {{abstract.date}}</p>
+                                        
+                                        <a href="/media/{{abstract.upload}}">
+                                            <i title="Abstract" class="material-icons">description</i>
+                                        </a>
+                                        {% if abstract.delivery_decision = 'Oral' %}
+                                            <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        {% endif %}
+                                        {% if abstract.delivery_decision = 'Poster' %}
+                                        <i title="Poster" class="material-icons">dashboard</i>
+                                        {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-md-3 block hidden-sm" style="text-align: center;">
+                            <br/>
+                                <a href="
+                                    {% if abstract.author.linkedin %}
+                                    {{abstract.author.linkedin}}" target="_blank
+                                    {% elif abstract.author.url  %}
+                                    {{abstract.author.url}}" target="_blank
+                                    {% else %}
+                                    #" onclick="return false;
+                                    {% endif %}
+                                    ">
+                                {% if abstract.author.picture %}
+                                    {% thumbnail abstract.author.picture "150x150" crop="center" as im %}
+                                    <img class="profile-pic" src="{{im.url}}"/>
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <div class="pic-box" style="font-size: 2.5em; text-align: center; margin:0;">
+                                        {{abstract.author.user.first_name|slice:":1"}}{{abstract.author.user.last_name|slice:":1"}}
+                                    </div>
+                                {% endif %}
+                                </a>
+                                    <p><strong>{{abstract.author.user.title}} {{abstract.author.user.first_name}} {{abstract.author.user.last_name}}</strong></p>
+                            </div>
+                            </div>
+                            <hr>
+                        {% endfor %}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

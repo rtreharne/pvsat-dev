@@ -6,8 +6,13 @@
         <div class="row" style="margin-top: 50px;">
             <div class="col-md-3" id = "leftCol">
                <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
+               <p>{{dummy_dict.0}}</p>
                 <ul class="nav nav-stacked">
                   <li><a href="/proceedings/oral/">Talks</a></li>
+                  {% if key == 'oral' %}
+                      <li class="li-sub"><a href="/proceedings/session/1/">Session 1</a></li>
+                  {% endif %}
+                  
                   <li><a href="/proceedings/poster/">Posters</a></li>
                 {% if key and not key == 'alltag' %}
                   <li><a href="{% url 'proceedings' %}">Full List</a></li>
@@ -42,7 +47,7 @@
                                 poster
                                 {% endif %}
                                 ">
-                                {{abstract.delivery_decision}} Presentation</p>
+                                {{abstract.delivery_decision}} Presentation | {{abstract.date}}</p>
                                 
                                 <a href="/media/{{abstract.upload}}">
                                     <i title="Abstract" class="material-icons">description</i>
