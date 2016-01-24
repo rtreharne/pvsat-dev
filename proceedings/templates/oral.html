@@ -3,14 +3,14 @@
 
 {% block content %}
     <div class="container">
-        <div class="row" style="margin-top: 50px;">
+        <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="col-md-3" id = "leftCol">
-               <div class="left" style="margin-top: 25px; text-align: left;" id="sidebar">
+               <div class="left" style="margin-top: 25px; text-align: left; background-color:white;" id="sidebar">
                 <ul class="nav nav-stacked">
                   <li><a href="/proceedings/oral/">Talks</a></li>
                   {% if key == 'oral' %}
                       {% for sess in session %}
-                          <li class="li-sub"><a href="#{{sess.session.id}}">{{sess.session}}</a></li>
+                          <li class="li-sub"><a href="#{{sess.session.id}}">{{sess.session}}        </a></li>
                       {% endfor %}
                   {% endif %}
                   
@@ -20,9 +20,12 @@
                 {% endif %}
                 </ul>
                 <hr>
-                {% if key and not key == 'alltag' %}
-                <h3>Related Tags:</h3>
+               </div>
+               <div class="left" style="margin-top: 25px; text-align: left;" id="tags">
+                {% if key and not key == 'alltag' and not key == 'oral' %}
+                <h3>Related Tags!:</h3>
                 {% endif %}
+                {% if not key == 'oral' %}
                 {% for tag in tags %}
                     {% if not tag == '' %}
                         <a href="/proceedings/{{tag}}/"><p title="{{tag}}"} {% if tag == key %} class="tag tag-selected" {% else %} class="tag" {% endif %}>{{tag|slice:":15"}}</p></a>
@@ -30,6 +33,7 @@
                 {% endfor %}
                 {% if not key %}
                     <a href="alltag"><p>  >> more tags</a></p>
+                {% endif %}
                 {% endif %}
                 </div>
             </div>
@@ -68,7 +72,7 @@
                                         {% endif %}
                                 </div>
                             </div>
-                            <div class="col-md-3 block hidden-sm" style="text-align: center;">
+                            <div class="col-md-3 block hidden-xs" style="text-align: center;">
                             <br/>
                                 <a href="
                                     {% if abstract.author.linkedin %}
@@ -101,4 +105,24 @@
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascript %}
+{% if key == 'oral' %}
+<script>
+$('#sidebar').affix({
+      offset: {
+        top:0 
+      }
+});
+
+var $body   = $(document.body);
+var navHeight = $('.navbar').outerHeight(true) + 10;
+
+$body.scrollspy({
+	target: '#leftCol',
+	offset: navHeight
+});
+</script>
+{% endif %}
 {% endblock %}
