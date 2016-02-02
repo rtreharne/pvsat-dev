@@ -42,7 +42,7 @@
                     {% for sess in session %}
                         <div style="overflow: hidden; padding: 0 15px; padding-bottom: 10px;background-color:#dbe2ea;">
                             <h1 id="{{sess.session.id}}">{{sess.session}}</h1>
-                            <h4>{{sess.session.start|date:'M d, H:i'}}</h4>
+                            <h4>{{sess.session.start|date:'M d, H:i'}} - {{sess.session.finish|date:'H:i'}}</h4>
                             <p><strong>Chair:</strong> {{sess.session.chair.forename}} {{sess.session.chair.surname}}, {{sess.session.chair.affiliation}}</p>
                         </div>
                         {% for abstract in sess.abstracts %}
@@ -59,9 +59,9 @@
                                         poster
                                         {% endif %}
                                         ">
-                                        {{abstract.delivery_decision}} Presentation | {{abstract.date}}</p>
+                                        {{abstract.delivery_decision}} Presentation | {{abstract.date|date:'H:i'}}</p>
                                         
-                                        <a href="/media/{{abstract.upload}}">
+                                        <a href="/media/{{abstract.upload}}" target="_blank">
                                             <i title="Abstract" class="material-icons">description</i>
                                         </a>
                                         {% if abstract.delivery_decision = 'Oral' %}

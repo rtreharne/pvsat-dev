@@ -10,7 +10,7 @@
                 
             <div class="col-lg-12 block">
                 <div class="col-md-8">
-                    <div class="square-box blog-box" style="min-height:10px; overflow:hidden; background-color:#234867">
+                    <div class="square-box blog-box" style="min-height:10px; overflow:hidden; background-color:#234867; height:517px;">
                         <div style="overflow: hidden;">
                             <div class="col-lg-12">
                             <p>12<sup>th</sup> Photovoltaic Science, Application and Technology Conference</p>
@@ -69,7 +69,7 @@
             
             <div class="col-lg-12 block">
                 <div class="col-md-4">
-                    <div class="square-box blog-box">
+                    <div style="height:553px;" class="square-box blog-box">
                         <div class="col-lg-12">
                             <h2>Conference Blog</h2>
                             <h3>{{articles.title}}</h3>
@@ -95,7 +95,7 @@
                         <h2>Guest Speakers</h2>
                     <br/>
                     {% for speaker in speakers %}
-                        <div class="col-md-3 col-sm-4 col-xs-12 center block">
+                        <div class="col-md-4 col-sm-4 col-xs-12 center block">
                                 {% thumbnail speaker.pic "300x300" crop="center" as im %}
                                 <img class="profile-pic" src="{{im.url}}">
                                 <p class="speaker-caption">{{speaker.forename}}
