@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
+from django.views.generic import RedirectView
 from django.conf import settings
 
 urlpatterns = patterns('',
@@ -13,7 +14,7 @@ urlpatterns = patterns('',
 	url(r'^contact/', include('message.urls')),
 	url(r'^venue/', include('venue.urls')),
 	url(r'^bursary/', include('bursary.urls')),
-	gurl(r'^proceedings/', include('proceedings.urls')),
+	url(r'^proceedings/', include('proceedings.urls')),
 )
 
 urlpatterns += patterns(
@@ -22,3 +23,7 @@ urlpatterns += patterns(
     'serve',
     {'document_root': settings.MEDIA_ROOT}),
                 )
+
+urlpatterns = patterns('',
+    (r'^favicon\.ico$', RedirectView.as_view(url=settings.MEDIA_URL + 'img/favicon.ico'))
+)
