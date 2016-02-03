@@ -4,6 +4,9 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.conf import settings
 
+def overview(request):
+    return render(request, 'bursary_overview.html', {})
+    
 def application(request):
     submitted = False
 
