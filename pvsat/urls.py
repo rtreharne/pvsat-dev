@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 	url(r'^contact/', include('message.urls')),
 	url(r'^venue/', include('venue.urls')),
 	url(r'^bursary/', include('bursary.urls')),
-	url(r'^proceedings/', include('proceedings.urls')),
+	gurl(r'^proceedings/', include('proceedings.urls')),
 )
 
 urlpatterns += patterns(
@@ -22,3 +22,7 @@ urlpatterns += patterns(
     'serve',
     {'document_root': settings.MEDIA_ROOT}),
                 )
+
+urlpatterns = patterns('',
+    url(r'^favicon.ico/$', lambda x: HttpResponseRedirect(settings.STATIC_URL+'img/favicon.ico')), #google chrome favicon fix
+)
