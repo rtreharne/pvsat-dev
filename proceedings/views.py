@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from authors.models import Abstract
-from proceedings.models import Session
+from proceedings.models import Session, Poster
 
 def home(request, key=None):
     tags_list = []
     session_list = Session.objects.all()
+    poster_session_list = Poster.objects.all()
     session = []
     
 
@@ -12,7 +13,14 @@ def home(request, key=None):
     
     if key != None and key != 'alltag':
         if key == 'poster':
-            abstracts = Abstract.objects.filter(delivery_decision='Poster')
+            abstracts = Abstract.objects.filter(delivery_decision='Poster').order_by('date')
+            for item in poster_session_list:
+                abstract_ordered = []
+                for abstract in abstracts:
+                    if item.start <= abstract.date and item.finish>= abstract.date:
+                        abstract_ordered.append(abstract)
+
+                session.append({'session': item, 'abstracts': abstract_ordered})
         elif key == 'oral':
             abstracts = Abstract.objects.filter(delivery_decision='Oral').order_by('date')
             for item in session_list:
@@ -43,6 +51,9 @@ def home(request, key=None):
     
     if key == 'oral':
         return render(request, 'oral.html', {'abstracts': abstracts, 'tags': tags_1D, 'key': key, 'session': session})
+    elif key == 'poster':
+        return render(request, 'poster.html', {'abstracts': abstracts, 'tags': tags_1D, 'key': key, 'session': session})
+
     else:
         return render(request, 'proceedings.html', {'abstracts': abstracts, 'tags': tags_1D, 'key': key, 'session': session})
 
