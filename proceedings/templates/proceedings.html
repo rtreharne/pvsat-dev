@@ -47,7 +47,7 @@
                                 poster
                                 {% endif %}
                                 ">
-                                {{abstract.delivery_decision}} Presentation | {{abstract.date}}</p>
+                                {{abstract.delivery_decision}} Presentation {% if not abstract.delivery_decision = 'Oral' %}| {{abstract.date}} {% endif %}</p>
                                 
                                 <a href="/media/{{abstract.upload}}">
                                     <i title="Abstract" class="material-icons">description</i>
