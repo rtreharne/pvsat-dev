@@ -84,7 +84,7 @@
                             </div>
                             {% endthumbnail %}
 
-                            {{articles.body|slice:":375"|safe}} ...</p>
+                            {{articles.body|slice:":300"|safe}} ...</p>
                             <br />
                             <a class="btn btn-primary page-scroll" href="{% url 'articles' %}{{articles.id}}/">Read More</a>
                         </div>
