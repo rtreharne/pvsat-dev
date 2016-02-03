@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load thumbnail %}
+{% load static %}
 
 {% block content %}
     <div class="container">
@@ -79,12 +80,13 @@
                             {% else %}
                                 <p>No abstracts submitted<p>
                             {% endif %}
-                            <a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
-                            <hr />
                             <h2>Author Guidance</h2>
-                            <p>Abstracts should be prepared in English, single-spaced, using Times New Roman 10pt font with margins of 2.5 cm and using Microsoft Word. The abstract must not exceed a single A4 page.</p>
-                            <p>Please name your abstract file according to the surname of the corresponding author and a running number if more than one paper is to be submitted, e.g. "Surname1.docx".</p>
+                            <div style="font-size: 1.2em;"
+                            <p>Please download our <a href="{% static 'files/PVSAT_paper_instructions.doc' %}" target="_blank">PVSAT-12 Paper: Instructions for Authors</a>.</p>
+                            <p>All papers must be submitted through your author dasboard as a .pdf file.</p>
+                            <p>Failure to comply with the instructions will result in your paper not being included in the PVSAT-12 conference proceedings.</p>
                             <p>Selected papers evidencing high quality contributions in PV materials and PV systems will be invited to submit their manuscripts to special issues of <a href="http://www.maneyonline.com/loi/ema" target="_blank">Energy Materials Journal</a> or IET Journal respectively.</p>
+                            </div>
                         </div>
                     </div>
 
