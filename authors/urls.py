@@ -10,3 +10,5 @@ urlpatterns = patterns('',
     url(r'^submit_paper/(?P<abstract_id>\d+)$', 'authors.views.submit_paper', name='submit_paper'),
     url(r'^update_profile/$', 'authors.views.update_profile', name='update_profile'),
 )
+
+
