@@ -59,6 +59,7 @@
                 <div class="col-md-8" >
                     <div class="square-box splash-box block"style="background-color: #3896B1; min-height:10px;">
                         <h2>My Abstracts</h2>
+                        <a href="{% url 'submit_abstract' %}">Submit New Abstract</a>
                         <div class="col-lg-12">
                         {% if abstracts %}
                             {% for abstract in abstracts %}
@@ -71,9 +72,12 @@
                                     {% endfor %}
                                 </div>
                                 -->
-                                <p><strong>{{abstract.unique_id}}</strong> | Submitted for: <strong>{{abstract.delivery}} presentation</strong> | {{abstract.status}}</p>
-                                  {% if abstract.status == 'Accepted' %}
-                                      <a class="btn btn-success page-scroll" href="#">Submit Paper</a>
+                                <p><strong>{{abstract.unique_id}}</strong> |{% if abstract.status == 'Accepted' %} Accepted for: <strong>{{abstract.delivery_decision}}</strong> presentation
+                                  
+                                     </p>
+                                      <a class="btn btn-success page-scroll" href="/authors/submit_paper/{{abstract.id}}">{% if abstract.paper %}Re-submit Paper{% else %}Submit paper{% endif %}</a>
+                                  {% else %}
+                                  Submitted for: <strong>{{abstract.delivery}}</strong> presentation</p>
                                   {% endif %}
                                 <hr>
                             {% endfor %}

@@ -6,6 +6,16 @@ from time import time
 from sorl.thumbnail import get_thumbnail, ImageField
 from django.core.exceptions import ValidationError
 
+def validate_paper_ext(value):
+    import os
+    ext = os.path.splitext(value.name)[1]
+    valid_extensions = ['.pdf']
+    filesize = value.file.size
+    if filesize > 5*1024*1024:
+        raise ValidationError(u'Max file size 5MB.')
+    if not ext in valid_extensions:
+        raise ValidationError(u'File type is not supported. File must be .pdf')
+
 def validate_file_extension(value):
     import os
     ext = os.path.splitext(value.name)[1]
@@ -33,10 +43,11 @@ class Abstract(models.Model):
     author = models.ForeignKey(UserProfile)
     title = models.CharField(max_length=1000)
     abstract = models.TextField(max_length=50000, null = True, blank=True)
-    upload = models.FileField(upload_to='abstract_uploads', null=True, blank=True)#, validators=[validate_file_extension])
+    upload = models.FileField(upload_to='abstract_uploads', validators=[validate_file_extension])
+    paper = models.FileField(upload_to='abstract_uploads', blank=True, null=True)
     authors = models.CharField(max_length=500,  help_text='e.g. J. Bloggs, M. C. Hammer ...')
     theme = models.ManyToManyField(Theme)
-    unique_id = models.CharField(max_length=11,null=True, blank=True, unique=True)
+    unique_id = models.CharField(max_length=11,null=True, unique=True)
     
     DELIVERY_CHOICE = (('Oral', 'Oral'), ('Poster', 'Poster'))
     delivery = models.CharField(max_length=6, choices=DELIVERY_CHOICE, default='Oral', help_text='N.B. We require that a paper be submitted for each abstract - even if you request a poster presentation.', verbose_name="Preference")

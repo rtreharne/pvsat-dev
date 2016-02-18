@@ -645,3 +645,24 @@ li.li-sub {
   	border:0 #eee solid;
   	border-right-width:4px;
 }
+div.submit-div {
+    background-color: white;
+    text-align: left;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    border: solid 2px red;
+}
+div.submit_div li label {
+    display: none;
+}
+#submit-paper> div > div > div > form > div > li > label {
+    display:none;
+}
+#paper-clear_id {
+    display:none;
+}
+#submit-paper > div > div > div > form > div > li > a {
+    color: blue;
+}
+

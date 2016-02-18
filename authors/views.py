@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.core.mail import send_mail, EmailMultiAlternatives
-from authors.forms import UserForm, UserProfileForm, AbstractForm
+from authors.forms import UserForm, UserProfileForm, AbstractForm,PaperForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
@@ -21,12 +21,12 @@ def submit_paper(request, abstract_id=1):
         else:
             submitted = False
             if request.method =='POST':
-                abstract_form = AbstractForm(data=request.POST, instance=inst)
-                if abstract_form.is_valid():
-                    abstract = abstract_form.save(commit=False)
+                paper_form = PaperForm(data=request.POST, instance=inst)
+                if paper_form.is_valid():
+                    abstract = paper_form.save(commit=False)
 
-                    if 'upload' in request.FILES:
-                        abstract.upload = request.FILES['upload']
+                    if 'paper' in request.FILES:
+                        abstract.paper= request.FILES['paper']
                         
                     abstract.save()
 
@@ -34,12 +34,12 @@ def submit_paper(request, abstract_id=1):
                     return HttpResponseRedirect(reverse('dashboard'))
 
                 else:
-                    print abstract_form.errors
+                    print paper_form.errors
 
             else:
-                abstract_form = AbstractForm(instance=inst)
+                paper_form= PaperForm(instance=inst)
 
-            return render(request, 'submit_paper.html', {'abstract_form': abstract_form})
+            return render(request, 'submit_paper.html', {'paper_form': paper_form, 'abstract': inst})
 
 @login_required
 def update_profile(request):

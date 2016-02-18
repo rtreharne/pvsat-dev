@@ -38,6 +38,10 @@ class AbstractForm(forms.ModelForm):
         model = Abstract
         fields = ('title', 'authors', 'upload', 'tags', 'delivery', 'theme')
  
+class PaperForm (forms.ModelForm):
+    class Meta:
+        model = Abstract
+        fields = ('paper',)
 
     
 
