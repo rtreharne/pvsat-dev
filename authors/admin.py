@@ -37,6 +37,7 @@ class AbstractAdmin(admin.ModelAdmin):
             return u"<a href='/media/%s' target='_blank'>Submitted</a>" % (obj.paper)
 
     view_paper.short_description = 'Paper'
+    view_paper.admin_order_field='paper'
     view_paper.allow_tags = True
 
 class UserProfileAdmin(admin.ModelAdmin):
