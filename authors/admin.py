@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class AbstractAdmin(admin.ModelAdmin):
-    list_display = ( 'short_title', 'view_id', 'view_link', 'view_email', 'affiliation', 'status', 'delivery','delivery_decision', 'date', 'author_registered')
+    list_display = ( 'short_title', 'view_id', 'view_link', 'view_email', 'affiliation', 'status', 'delivery','delivery_decision', 'view_paper','author_registered')
 
     def affiliation(self, obj):
         return ("%s" % obj.author.affiliation)
@@ -31,6 +31,13 @@ class AbstractAdmin(admin.ModelAdmin):
     view_id.short_description = 'ID'
     view_id.admin_order_field='unique_id'
     view_id.allow_tags = True
+
+    def view_paper(self,obj):
+        if obj.paper:
+            return u"<a href='/media/%s' target='_blank'>Submitted</a>" % (obj.paper)
+
+    view_paper.short_description = 'Paper'
+    view_paper.allow_tags = True
 
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'affiliation', 'twitter')
