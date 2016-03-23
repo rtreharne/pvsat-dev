@@ -23,7 +23,7 @@
                                     <img class="profile-pic" src="{{im.url}}">
                                 </div>
                                 {% endthumbnail %}
-                                <p>{{article.body|slice:":350"}} ... </a></p>
+                                <p>{{article.body|safe|slice:":350"}} ... </a></p>
                                 <a class="btn btn-primary page-scroll" href="{% url 'articles' %}{{article.id}}/">Read More</a>
                             <hr />
                             {% endfor %}
