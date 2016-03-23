@@ -43,7 +43,7 @@ class Abstract(models.Model):
     author = models.ForeignKey(UserProfile)
     title = models.CharField(max_length=1000)
     abstract = models.TextField(max_length=50000, null = True, blank=True)
-    upload = models.FileField(upload_to='abstract_uploads', validators=[validate_file_extension])
+    upload = models.FileField(upload_to='abstract_uploads', blank=True, validators=[validate_file_extension])
     paper = models.FileField(upload_to='abstract_uploads', blank=True, null=True)
     authors = models.CharField(max_length=500,  help_text='e.g. J. Bloggs, M. C. Hammer ...')
     theme = models.ManyToManyField(Theme)
