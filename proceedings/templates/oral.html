@@ -43,7 +43,7 @@
                         <div style="overflow: hidden; padding: 0 15px; padding-bottom: 10px;background-color:#dbe2ea;">
                             <h1 id="{{sess.session.id}}">{{sess.session}}</h1>
                             <h4>{{sess.session.start|date:'M d, H:i'}} - {{sess.session.finish|date:'H:i'}}</h4>
-                            <p><strong>Chair:</strong> {{sess.session.chair.forename}} {{sess.session.chair.surname}}, {{sess.session.chair.affiliation}}</p>
+                            <p><strong>Chair:</strong> {{sess.session.chair}}</p>
                         </div>
                         {% for abstract in sess.abstracts %}
                             <div style="overflow: hidden;">

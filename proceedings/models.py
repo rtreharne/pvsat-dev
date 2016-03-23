@@ -6,7 +6,7 @@ class Session(models.Model):
     session = models.CharField(max_length=20)
     start = models.DateTimeField()
     finish = models.DateTimeField()
-    chair = models.ForeignKey(Member, null=True, blank=True)
+    chair = models.CharField(max_length=100, null=True, blank=True)
 
 
     def __unicode__(self):
