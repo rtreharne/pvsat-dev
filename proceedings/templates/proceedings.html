@@ -61,10 +61,32 @@
                                     <i title="Abstract" class="material-icons">description</i>
                                 </a>
                                 {% if abstract.delivery_decision = 'Oral' %}
-                                    <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                    {% if abstract.slides_link %}
+                                        <a href="{{abstract.slides_link}}" target="_blank">
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        </a>
+                                    {% elif abstract.slides_file %}
+                                        <a href="/media/{{abstract.slides_file}}" target="_blank">
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        </a>
+                                    {% else %}
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                    {% endif %}
+
                                 {% endif %}
+
                                 {% if abstract.delivery_decision = 'Poster' %}
-                                <i title="Poster" class="material-icons">dashboard</i>
+                                    {% if abstract.poster_link %}
+                                        <a href="{{abstract.poster_link}}" target="_blank">
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        </a>
+                                    {% elif abstract.poster_file %}
+                                        <a href="/media/{{abstract.poster_file}}" target="_blank">
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        </a>
+                                    {% else %}
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                    {% endif %}
                                 {% endif %}
                         </div>
                     </div>

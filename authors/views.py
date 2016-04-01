@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.template.loader import render_to_string
 from django.core.mail import send_mail, EmailMultiAlternatives
-from authors.forms import UserForm, UserProfileForm, AbstractForm,PaperForm
+from authors.forms import UserForm, UserProfileForm, AbstractForm,PaperForm,PosterForm,SlidesForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
@@ -10,6 +10,65 @@ from authors.models import UserProfile, Abstract
 from django.contrib.auth.forms import UserCreationForm
 from django.conf import settings
 from django.core.exceptions import ObjectDoesNotExist
+
+@login_required
+def submit_slides(request, abstract_id=1):
+	user = request.user
+	inst = Abstract.objects.get(id=abstract_id)
+        
+	if inst.author.user.id != user.id:
+            return HttpResponseRedirect(reverse('dashboard'))
+        else:
+            submitted = False
+            if request.method =='POST':
+                slides_form = SlidesForm(data=request.POST, instance=inst)
+                if slides_form.is_valid():
+                    abstract = slides_form.save(commit=False)
+
+                    if 'slides_file' in request.FILES:
+                        abstract.slides_file= request.FILES['slides_file']
+
+                    abstract.save()
+
+                    submitted = True
+                    return HttpResponseRedirect(reverse('dashboard'))
+
+                else:
+                    print slides_form.errors
+
+            else:
+                slides_form = SlidesForm(instance=inst)
+
+            return render(request, 'submit_slides.html', {'slides_form': slides_form, 'abstract': inst})
+@login_required
+def submit_poster(request, abstract_id=1):
+	user = request.user
+	inst = Abstract.objects.get(id=abstract_id)
+        
+	if inst.author.user.id != user.id:
+            return HttpResponseRedirect(reverse('dashboard'))
+        else:
+            submitted = False
+            if request.method =='POST':
+                poster_form = PosterForm(data=request.POST, instance=inst)
+                if poster_form.is_valid():
+                    abstract = poster_form.save(commit=False)
+
+                    if 'poster_file' in request.FILES:
+                        abstract.poster_file= request.FILES['poster_file']
+
+                    abstract.save()
+
+                    submitted = True
+                    return HttpResponseRedirect(reverse('dashboard'))
+
+                else:
+                    print poster_form.errors
+
+            else:
+                poster_form = PosterForm(instance=inst)
+
+            return render(request, 'submit_poster.html', {'poster_form': poster_form, 'abstract': inst})
 
 @login_required
 def submit_paper(request, abstract_id=1):

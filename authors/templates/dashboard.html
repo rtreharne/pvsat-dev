@@ -76,6 +76,12 @@
                                   
                                      </p>
                                       <a class="btn btn-success page-scroll" href="/authors/submit_paper/{{abstract.id}}">{% if abstract.paper %}Re-submit Paper{% else %}Submit paper{% endif %}</a>
+                                      {% if abstract.delivery_decision == 'Poster' %}
+                                          <a class="btn btn-success page-scroll" href="/authors/submit_poster/{{abstract.id}}">{% if abstract.poster_file or abstract.poster_link %}Re-submit Poster{% else %}Submit poster{% endif %}</a>
+                                      {% endif %}
+                                      {% if abstract.delivery_decision == 'Oral' %}
+                                          <a class="btn btn-success page-scroll" href="/authors/submit_slides/{{abstract.id}}">{% if abstract.slides_file or abstract.poster_link %}Re-submit Slides{% else %}Submit slides{% endif %}</a>
+                                      {% endif %}
                                   {% else %}
                                   Submitted for: <strong>{{abstract.delivery}}</strong> presentation</p>
                                   {% endif %}

@@ -43,5 +43,15 @@ class PaperForm (forms.ModelForm):
         model = Abstract
         fields = ('paper',)
 
+class PosterForm(forms.ModelForm):
+    class Meta:
+        model = Abstract
+        fields = ('poster_file', 'poster_link',)
+
+class SlidesForm(forms.ModelForm):
+    class Meta:
+        model = Abstract
+        fields = ('slides_file', 'slides_link',)
+        
     
 

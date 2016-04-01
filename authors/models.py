@@ -48,6 +48,10 @@ class Abstract(models.Model):
     authors = models.CharField(max_length=500,  help_text='e.g. J. Bloggs, M. C. Hammer ...')
     theme = models.ManyToManyField(Theme)
     unique_id = models.CharField(max_length=11,null=True, unique=True)
+    poster_file = models.FileField(upload_to='posters', blank=True, null=True, help_text="Please submit A4 .pdf, max size 5MB")
+    poster_link = models.URLField(blank=True, null=True,help_text="e.g. http://dropbox ...")
+    slides_file = models.FileField(upload_to='slides', blank=True, null=True, help_text="Please submit .pdf only, max size 5MB")
+    slides_link = models.URLField(blank=True, null=True, help_text="e.g. http://dropbox ...")
     
     DELIVERY_CHOICE = (('Oral', 'Oral'), ('Poster', 'Poster'))
     delivery = models.CharField(max_length=6, choices=DELIVERY_CHOICE, default='Oral', help_text='N.B. We require that a paper be submitted for each abstract - even if you request a poster presentation.', verbose_name="Preference")
