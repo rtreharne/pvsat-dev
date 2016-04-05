@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class AbstractAdmin(admin.ModelAdmin):
-    list_display = ( 'short_title', 'view_id', 'view_link', 'view_email', 'affiliation', 'status', 'delivery','delivery_decision', 'view_paper','author_registered')
+    list_display = ( 'short_title', 'view_id', 'view_link', 'view_email', 'affiliation', 'status', 'delivery','delivery_decision', 'view_paper', 'poster_id', 'author_registered')
 
     def affiliation(self, obj):
         return ("%s" % obj.author.affiliation)
