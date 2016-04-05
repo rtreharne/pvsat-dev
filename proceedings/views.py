@@ -13,7 +13,7 @@ def home(request, key=None):
     
     if key != None and key != 'alltag':
         if key == 'poster':
-            abstracts = Abstract.objects.filter(delivery_decision='Poster').order_by('date')
+            abstracts = Abstract.objects.filter(delivery_decision='Poster').order_by('poster_id')
             for item in poster_session_list:
                 abstract_ordered = []
                 for abstract in abstracts:
