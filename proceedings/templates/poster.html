@@ -52,7 +52,13 @@
                             <div style="overflow: hidden;">
                             <div class="col-md-9 block">
                                 <div style="overflow:hidden" id="{{abstract.date}}">
+                                    {% if abstract.paper %}
+                                        <a href="/media/{{abstract.paper}}" target="_blank">
+                                            <h2 class="left">{{abstract.title|safe}}</h2>
+                                        </a>
+                                    {% else %}
                                         <h2 class="left">{{abstract.title|safe}}</h2>
+                                    {% endif %}
                                     <p>{{abstract.authors}}<p>
                                     <h4>{{abstract.author.affiliation}}</h4>
                                     <p class="
