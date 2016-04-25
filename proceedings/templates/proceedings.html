@@ -55,19 +55,30 @@
                                 ">
                                 {{abstract.delivery_decision}} Presentation | {{abstract.date}} </p>
                                 
-                                <a href="/media/{{abstract.upload}}">
+                                <a href="/media/{{abstract.upload}}" target="_blank">
                                     <i title="Abstract" class="material-icons">description</i>
                                 </a>
                                 {% if abstract.delivery_decision = 'Oral' %}
+                                    {% if abstract.slides_link and user.is_authenticated %}
+                                        <a href="{{abstract.slides_link}}" target="_blank">
                                         <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        </a>
+                                    {% elif abstract.slides_file  and user.is_authenticated%}
+                                        <a href="/media/{{abstract.slides_file}}" target="_blank">
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                        </a>
+                                    {% else %}
+                                        <i title="Presentation"class="material-icons">chrome_reader_mode</i>
+                                    {% endif %}
+
                                 {% endif %}
 
                                 {% if abstract.delivery_decision = 'Poster' %}
-                                    {% if abstract.poster_link %}
+                                    {% if abstract.poster_link and user.is_authenticated %}
                                         <a href="{{abstract.poster_link}}" target="_blank">
                                         <i title="Presentation"class="material-icons">chrome_reader_mode</i>
                                         </a>
-                                    {% elif abstract.poster_file %}
+                                    {% elif abstract.poster_file and user.is_authenticated  %}
                                         <a href="/media/{{abstract.poster_file}}" target="_blank">
                                         <i title="Presentation"class="material-icons">chrome_reader_mode</i>
                                         </a>
