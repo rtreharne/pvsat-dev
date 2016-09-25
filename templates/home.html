@@ -9,6 +9,7 @@
                 <br />
                 
             <div class="col-lg-12 block">
+                <!--
                 <div class="col-md-12">
                     <div class="square-box blog-box" style="overflow:hidden; background-color:#990000; min-height:20px;">
                         <div style="overflow: hidden;">
@@ -18,17 +19,18 @@
                         </div>
                     </div>
                 </div>
+                -->
 
                 <div class="col-md-8">
-                    <div class="square-box blog-box" style="min-height:10px; overflow:hidden; background-color:#234867; height:517px;">
+                    <div class="square-box blog-box" style="background-color:#672358;">
                         <div style="overflow: hidden;">
                             <div class="col-lg-12">
-                            <p>12<sup>th</sup> Photovoltaic Science, Application and Technology Conference</p>
+                            <p>13<sup>th</sup> Photovoltaic Science, Application and Technology Conference</p>
                             </div>
-                        <div class="col-sm-8 block">
-                            <h1 style="margin-top: 0px; font-size:3em;">PVSAT-12</h1>
-                            <h2>6 - 8 April 2016</h2>
-                            <h3><a href="{% url 'venue' %}">University of Liverpool, UK</a></h3>
+                        <div class="col-sm-7 block">
+                            <h1 style="margin-top: 0px; font-size:3em;">PVSAT-13</h1>
+                            <h2>5 - 7 April 2017</h2>
+                            <h3><a href="{% url 'venue' %}">University of Bangor, UK</a></h3>
                             <p>Organized by <a href="http://www.uk-ises.org/">The Solar Energy Society (UK-ISES)</a></p>
                             <!---
                             <p class="share">
@@ -39,7 +41,8 @@
                             -->
                         </div>
 
-                        <div class="col-sm-4 block">
+                        <div class="col-sm-5 block" style="text-align:center;">
+                            <img style="max-width: 90%" src="/static/img/bangor_logo.png"/>
                             <!--
                             <ul class="list-unstyled" style="padding-top:0">
                             <li><a class="btn btn-primary page-scroll" href="{% url 'registration' %}">Register to Attend</a></li>
@@ -51,11 +54,9 @@
                             -->
                         </div>
                     </div>
-                    <div class="hidden-xs col-md-12" style="min-height:245px;">
+                    <div class="col-md-12" style="min-height:200px;">
                         <p style=" font-size:1.2em;">
-                        <strong>It's over!</strong> The PVSAT-12 Committee would like to thank all of the PVSAT-12 delegates for their attendance and contributions to this year's PVSAT-12 conference in Liverpool. You can now access all contributed papers and presentations at the <a href="/proceedings/oral/">Programme</a> link above. We look forward to seeing you all again next year at Bangor University for PVSAT-13.
-                        </p>
-
+                        <strong>We're getting ready!</strong> The PVSAT-13 committee are currently preparing the call for abstracts. Please keep checking the site for further updates, we expect the call to be released within the next couple of weeks.</p>
                         <p>
 
                             <strong>PVSAT is the UK’s premier scientific event for solar PV </strong>where the latest advances in UK research and development are presented and discussed.  This 3-day conference covers all PV technologies; crystalline silicon, inorganic thin film, multi-junction concentrators and emerging organic and hybrid cells, including perovskite cells.</p>  
@@ -68,16 +69,16 @@
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="square-box speaker-box block" style="background-color:#333333;">
+                        <div class="square-box blog-box block" style="background-color:#333333;">
                     <img class="logo" style="max-width:400px;" src="/static/img/SS.png">
                     <h2>Research Methods in Solar PV</h2>
-                    <h3>5 April 2016</h3>
-                    <h4>Stephenson Institute for Renewable Energy, University of Liverpool</h4>
-                    <p>A one day workshop in the field of PV ideal for early stage researchers, PhD students, industry workers or postdocs. organised by the EPSC SuperSolar PV Hub in association with PVSAT.</p>
+                    <h3>4 April 2017</h3>
+                    <h4>University of Bangor</h4>
+                    <p>A one day workshop in the field of PV ideal for early stage researchers, PhD students, industry workers or postdocs. organised by the EPSRC SuperSolar PV Hub in association with PVSAT.</p>
                     <br/>
                     <div class="col-md-6 center" style="margin-bottom: 10px;">
-                    <a class="btn btn-primary page-scroll center" href="http://www.cdt-pv.org/training/module/9/" style="width: auto" target="_blank">View Resources</a>
                     <!--
+                    <a class="btn btn-primary page-scroll center" href="http://www.cdt-pv.org/training/module/9/" style="width: auto" target="_blank">View Resources</a>
                     <a class="btn btn-primary page-scroll" href="http://www.cdt-pv.org/events/4/" target="_blank">More Info</a>
                     </div>
                     <div class="col-md-6 center" style="margin-bottom: 10px;">
@@ -90,7 +91,7 @@
             
             <div class="col-lg-12 block">
                 <div class="col-md-4">
-                    <div style="height:553px;" class="square-box blog-box">
+                    <div style="height:553px; background-color:#236732" class="square-box blog-box">
                         <div class="col-lg-12">
                             <h2>Conference Blog</h2>
                             <h3>{{articles.title}}</h3>
@@ -111,6 +112,24 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-8">
+                    <div class="test-box square-box block">
+                        <h2>Sponsors</h2>
+                        <h4>PVSAT-12 is proudly sponsored and supported by:</h4>
+                        <br />
+                        {% for sponsor in sponsors %}
+                            <div class="col-md-4 col-sm-6 col-xs-12 center block">
+                                    {% thumbnail sponsor.logo "200x100"  as im %}
+                                    <img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;">
+                                    {% endthumbnail %}
+
+                            </div>
+                        {% endfor %}
+                </div>
+            </div>
+
+                <!--
                 <div class="col-md-8">
                     <div class="square-box speaker-box block">
                         <h2>Guest Speakers</h2>
@@ -128,8 +147,10 @@
                     {% endfor %}
                     </div>
                 </div>
+                -->
             </div>
 
+            <!--
             <div class="col-lg-12 block">
                 <div class="col-md-12">
                     <div class="test-box square-box block">
@@ -146,6 +167,7 @@
                         {% endfor %}
                 </div>
             </div>
+            -->
             
 
             </div>

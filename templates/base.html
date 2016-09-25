@@ -72,7 +72,6 @@
                     <li>
                         <a class="page-scroll" href="{% url 'home' %}">Home</a>
                     </li>
-                    -->
                     <li>
                         <a class="page-scroll" href="/proceedings/oral/">Programme</a>
                     </li>
@@ -85,6 +84,7 @@
                     <li>
                         <a class="page-scroll" href="{% url 'venue' %}">Venue</a>
                     </li>
+                    -->
                     <li>
                         <a class="page-scroll" href="{% url 'articles' %}">Blog</a>
                     </li>
@@ -112,11 +112,12 @@
                         <a class="page-scroll" style="display:inline-block" href=""><i class="fa fa-facebook-square fa-2x"></i></a>
                         -->
                     </li>
+                        <!--
 		    {% if user.is_authenticated %}
 			<li class="dropdown">
 			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>{{user.username}}</strong><span class="caret"></span></a>
 			    <ul class="dropdown-menu">
-					<!--<li><a href="{% url 'dashboard' %}"><i class="fa fa-dashcube"></i> Dashboard</a></li>-->
+					<li><a href="{% url 'dashboard' %}"><i class="fa fa-dashcube"></i> Dashboard</a></li>
 					<li><a href="{% url 'author-logout' %}"><strong><i class="fa fa-sign-out"></i> Logout</strong></a></li>
 			    </ul>
 			</li>
@@ -125,10 +126,11 @@
 			    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><strong>Delegates</strong><span class="caret"></span></a>
 			    <ul class="dropdown-menu">
 					<li><a href="{% url 'author-login' %}"><strong><i class="fa fa-sign-in"></i> Login</strong></a></li>
-					<!--<li><a href="{% url 'register' %}"><strong><i class="fa fa-user"></i> Create Account</strong></a></li>-->
+					<li><a href="{% url 'register' %}"><strong><i class="fa fa-user"></i> Create Account</strong></a></li>
 			    </ul>
 			</li>
 		    {% endif %}
+            -->
             </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -145,22 +147,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <a href="http://liv.ac.uk" target="_blank">
-                        <img src="/static/img/liv.png" style="max-height: 100px; max-width: 100%; display: inline-text">
-                    </a>
                     <!--
+                    <a href="http://bangor.ac.uk" target="_blank">
+                        <img src="/static/img/bangor_logo.png" style="max-height: 100px; max-width: 100%; display: inline-text">
+                    </a>
+                    -->
                     <a href="http://solidstatedesign.co.uk" target="_blank">
                         <img src="/static/img/solidstate.png" style="max-height: 100px; max-width:100%;display: inline-text;">
                     </a>
-                    -->
+                    <!--
                     <a href="http://cdt-pv.org" target="_blank">
                         <img src="/static/img/cdtpv_logo_white.png" style="max-height: 100px; max-width:100%;display: inline-text;">
                     </a>
+                    -->
                     <br />
 				
-                    <!--
 					<p>&copy Copyright <a href="http://solidstatedesign.co.uk">Solid State Design 2016</a></p>
-                    -->
 					<p>|<a href="/admin/" target="_blank">Admin</a>|</p>
                 </div>
             </div>

@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'c*&!z_lk3in@$!4*k(3*%7ogz))9%3v_w16)9$6#j7ht9k8y%3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-TEMPLATE_DEBUG = False
+TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # TEMPLATES
 
@@ -113,11 +113,11 @@ LOGIN_URL = '/authors/login/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS =True 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'pvsat.info@gmail.com'
-EMAIL_HOST_PASSWORD = '>^xJ@.=s!\;O[5T'
-SERVER_EMAIL = 'pvsat.info@gmail.com'
+EMAIL_HOST_USER = 'rob.treharne@gmail.com' #'pvsat.info@gmail.com'
+EMAIL_HOST_PASSWORD = 'a1fn03l85'#'>^xJ@.=s!\;O[5T'
+SERVER_EMAIL = 'rob.treharne@gmail.com'#'pvsat.info@gmail.com'
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = 'PVSAT Admin <pvsat.info@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Robert Treharne <rob.treharne@gmail.com>'#'PVSAT Admin <pvsat.info@gmail.com>'
 SITE_URL = 'http://www.pvsat.org.uk/'
 ADMIN_EMAIL = 'info@uk-ises.org'
 EMAIL_STATUS= True
