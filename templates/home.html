@@ -30,7 +30,7 @@
                         <div class="col-sm-7 block">
                             <h1 style="margin-top: 0px; font-size:3em;">PVSAT-13</h1>
                             <h2>5 - 7 April 2017</h2>
-                            <h3><a href="{% url 'venue' %}">University of Bangor, UK</a></h3>
+                            <h3><a href="http://bangor.ac.uk">University of Bangor, UK</a></h3>
                             <p>Organized by <a href="http://www.uk-ises.org/">The Solar Energy Society (UK-ISES)</a></p>
                             <!---
                             <p class="share">
@@ -114,18 +114,23 @@
                 </div>
 
                 <div class="col-md-8">
-                    <div class="test-box square-box block">
+                    <div class="blog-box square-box block" style="background-color: #fff; height: 552px; color:rgba(0, 0, 0, 0.64)">
                         <h2>Sponsors</h2>
+                            <p>Looking to sponsor PVSAT? Get in touch.<p>
+                            <a class="btn btn-primary page-scroll" href="/contact/">Contact Us</a>
+                        </br>
+                        </br>
                         <h4>PVSAT-12 is proudly sponsored and supported by:</h4>
                         <br />
                         {% for sponsor in sponsors %}
                             <div class="col-md-4 col-sm-6 col-xs-12 center block">
                                     {% thumbnail sponsor.logo "200x100"  as im %}
-                                    <img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;">
+                                    <a href="{{sponsor.url}}" target="_blank"><img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
                                     {% endthumbnail %}
 
                             </div>
                         {% endfor %}
+                        </br>
                 </div>
             </div>
 
