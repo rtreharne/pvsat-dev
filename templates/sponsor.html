@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 block">
+                <br/>
+                <br/>
+                <div class="col-md-12">
+                    <div class="blog-box square-box block" style="background-color: #fff; height: 552px; color:rgba(0, 0, 0, 0.64)">
+                        <div style="margin:5% 10%;">
+                        
+                        <h1>Become a PVSAT Sponsor!</h1>
+                        <p>For details of sponsorship opportunities for PVSAT-13 please click the button below to download our Sponsorship Form.</p>
+                            <a class="btn btn-primary page-scroll" href="/media/forms/Sponsorship_Info.docx">Sponsorship Info</a>
+                        </br>
+                        </br>
+                        </br>
+                        <h4>PVSAT-13 is proudly sponsored and supported by:</h4>
+                        <br />
+                        {% for sponsor in sponsors %}
+                            <div class="col-md-4 col-sm-6 col-xs-12 center block">
+                                    {% thumbnail sponsor.logo "200x100"  as im %}
+                                    <a href="{{sponsor.url}}" target="_blank"><img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    {% endthumbnail %}
+
+                            </div>
+                        {% endfor %}
+                        </br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}

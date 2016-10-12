@@ -22,7 +22,7 @@
                 -->
 
                 <div class="col-md-8">
-                    <div class="square-box blog-box" style="background-color:#672358;">
+                    <div class="square-box blog-box" style="background-color:#4c5a83;">
                         <div style="overflow: hidden;">
                             <div class="col-lg-12">
                             <p>13<sup>th</sup> Photovoltaic Science, Application and Technology Conference</p>
@@ -42,7 +42,7 @@
                         </div>
 
                         <div class="col-sm-5 block" style="text-align:center;">
-                            <img style="max-width: 90%" src="/static/img/bangor_logo.png"/>
+                            <img style="max-width: 90%; margin-top: 5%;" src="/static/img/bangor_logo_color.png"/>
                             <!--
                             <ul class="list-unstyled" style="padding-top:0">
                             <li><a class="btn btn-primary page-scroll" href="{% url 'registration' %}">Register to Attend</a></li>
@@ -55,11 +55,18 @@
                         </div>
                     </div>
                     <div class="col-md-12" style="min-height:200px;">
-                        <p style=" font-size:1.2em;">
-                        <strong>We're getting ready!</strong> The PVSAT-13 committee are currently preparing the call for abstracts. Please keep checking the site for further updates, we expect the call to be released within the next couple of weeks.</p>
                         <p>
 
                             <strong>PVSAT is the UK’s premier scientific event for solar PV </strong>where the latest advances in UK research and development are presented and discussed.  This 3-day conference covers all PV technologies; crystalline silicon, inorganic thin film, multi-junction concentrators and emerging organic and hybrid cells, including perovskite cells.</p>  
+                        </p>
+                        <p>
+                        <strong>The Call for Papers for PVSAT-13 is now open.</strong> The deadline for on-line submission of abstracts is <strong>Friday 16 December 2016</strong>. The Conference Delegate and Exhibitor registration forms are available on the <a href="">registration</a> page. Details of Student Bursaries will be made available in the near future.
+                        </p>
+                        <hr/>
+                        <p>
+                           <a class="btn btn-primary page-scroll" href="/media/forms/PVSAT-13_Call-for-Papers.docx">Download Call</a>
+                       </p>
+
                         <!--
                         <p style="font-size:1.2em;">
                             <strong>But PVSAT is not just about research.</strong> From the beginning this conference has included applications, field performance, environmental impact, policy issues and market development and with the UK’s impressive deployment of PV in just the last three years, there is much to learn from the experience and performance of large-scale solar PV in the UK.
@@ -79,11 +86,11 @@
                     <div class="col-md-6 center" style="margin-bottom: 10px;">
                     <!--
                     <a class="btn btn-primary page-scroll center" href="http://www.cdt-pv.org/training/module/9/" style="width: auto" target="_blank">View Resources</a>
-                    <a class="btn btn-primary page-scroll" href="http://www.cdt-pv.org/events/4/" target="_blank">More Info</a>
+                    -->
+                    <a class="btn btn-primary page-scroll" href="#" onClick="alert('Coming Soon')">More Info</a>
                     </div>
                     <div class="col-md-6 center" style="margin-bottom: 10px;">
-                    <a class="btn btn-primary page-scroll" href="http://payments.liv.ac.uk/browse/extra_info.asp?compid=1&modid=2&deptid=38&catid=72&prodid=1285&searchresults=1">Register</a>
-                    -->
+                    <a class="btn btn-primary page-scroll" href="#" onClick="alert('Coming Soon')">Register</a>
                     </div>
                     </div>
                  </div>
@@ -115,13 +122,7 @@
 
                 <div class="col-md-8">
                     <div class="blog-box square-box block" style="background-color: #fff; height: 552px; color:rgba(0, 0, 0, 0.64)">
-                        <h2>Sponsors</h2>
-                            <p>Looking to sponsor PVSAT? Get in touch.<p>
-                            <a class="btn btn-primary page-scroll" href="/contact/">Contact Us</a>
-                        </br>
-                        </br>
-                        <h4>PVSAT-12 is proudly sponsored and supported by:</h4>
-                        <br />
+                        <p style="text-align:center">PVSAT-13 is proudly sponsored and supported by:</p>
                         {% for sponsor in sponsors %}
                             <div class="col-md-4 col-sm-6 col-xs-12 center block">
                                     {% thumbnail sponsor.logo "200x100"  as im %}

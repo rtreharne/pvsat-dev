@@ -7,6 +7,19 @@ from blog.models import Article
 from django.core.exceptions import ObjectDoesNotExist
 from random import shuffle
 
+def sponsor(request):
+    sponsor_list = Sponsor.objects.order_by('?')[:]
+    speaker_list = Speaker.objects.order_by('?')[:]
+    try:
+        article = Article.objects.latest('pub_date')
+    except ObjectDoesNotExist:
+        article = None
+
+    dict = {'speakers': speaker_list,
+            'sponsors': sponsor_list,
+            'articles': article}
+    return render(request, 'sponsor.html', dict)
+
 def home(request):
     sponsor_list = Sponsor.objects.order_by('?')[:]
     speaker_list = Speaker.objects.order_by('?')[:]
