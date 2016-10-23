@@ -18,7 +18,7 @@ def message(request):
 
             text_content = render_to_string("message_temp.txt", {'message' : message})
 
-            msg = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
+            msg = EmailMultiAlternatives(subject, text_content, '', [settings.DEFAULT_FROM_EMAIL])
 
             if settings.EMAIL_STATUS:
                 msg.send()
