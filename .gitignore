@@ -1,3 +1,3 @@
-#/pvsat/settings.py
-/*.sqlite3
+/pvsat/settings.py
+*.sqlite3
 /media/*
