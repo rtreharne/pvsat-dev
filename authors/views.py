@@ -153,7 +153,7 @@ def submit_abstract(request):
             except ObjectDoesNotExist:
                 id = 0
 
-            abstract.unique_id = 'PVSAT12_%s' % (str(id).zfill(3))
+            abstract.unique_id = 'PVSAT13_%s' % (str(id).zfill(3))
 
             if 'upload' in request.FILES:
 			   abstract.upload = request.FILES['upload']
@@ -175,7 +175,7 @@ def submit_abstract(request):
 
             text_content = render_to_string("abs_to_admin.txt", {'abstract': abstract, 'URL': settings.SITE_URL})
 
-            msg2 = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL])
+            msg2 = EmailMultiAlternatives(subject, text_content, '', [settings.ADMIN_EMAIL, settings.DEFAULT_FROM_EMAIL])
 
             if settings.EMAIL_STATUS:
                 msg1.send()

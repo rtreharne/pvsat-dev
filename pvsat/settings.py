@@ -120,7 +120,7 @@ SERVER_EMAIL = 'pvsat.info@gmail.com'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = 'PVSAT Admin <pvsat.info@gmail.com>'
 SITE_URL = 'http://www.pvsat.org.uk/'
-ADMIN_EMAIL = 'info@uk-ises.org'
+ADMIN_EMAIL = 'rob@solidstatedesign.co.uk' #'info@uk-ises.org'
 EMAIL_STATUS= True
 
 '''
