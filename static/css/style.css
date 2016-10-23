@@ -577,3 +577,6 @@ more media queries
 		background-image: none;
 	}
 }
+a.btn.btn-primary.page-scroll.main-but {
+    margin: 5%;
+}

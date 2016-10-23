@@ -666,3 +666,7 @@ div.submit_div li label {
     color: blue;
 }
 
+a.btn.btn-primary.page-scroll.main-but {
+    margin: 1%;
+}
+

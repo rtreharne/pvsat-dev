@@ -59,8 +59,8 @@
                 <div class="col-md-8" >
                     <div class="square-box splash-box block"style="background-color: #3896B1; min-height:10px;">
                         <h2>My Abstracts</h2>
-                        <a href="{% url 'submit_abstract' %}">Submit New Abstract</a>
-                        <div class="col-lg-12">
+                    <div class="col-lg-12">
+                        <a class="btn btn-success page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
                         {% if abstracts %}
                             {% for abstract in abstracts %}
                                 <h3>{{ abstract.title }}</h3>
@@ -90,27 +90,34 @@
                             {% else %}
                                 <p>No abstracts submitted<p>
                             {% endif %}
+                            <h2>Abstract Preparation</h2>
+                            <div style="font-size:1.2em;">
+                                <p>Abstracts are invited for oral and poster presentation. All papers will be published in the conference proceedings. Papers will be subjected to a stringent review process and will only be accepted based on their merits.</p>
+                                </p>The abstract must not exceed 1 page A4 and should be uploaded by clicking the "Submit New Abstract" button above. The abstract should identify paper title, names and affiliations of all authors, purpose of the work, scientific approach, relevance, summary of the results and conclusions. Selected papers evidencing high quality contributions in PV materials and PV systems will be invited to submit their manuscripts to a special issue of the IET Journal.</p>
+                            </div>
+                            <!--
                             <h2>Author Guidance</h2>
                             <div style="font-size: 1.2em;"
-                            <p>Please download our <a href="{% static 'files/PVSAT_paper_instructions.doc' %}" target="_blank">PVSAT-12 Paper: Instructions for Authors</a>.</p>
+                            <p>Please download our <a href="{% static 'files/PVSAT_paper_instructions.doc' %}" target="_blank">PVSAT-13 Paper: Instructions for Authors</a>.</p>
                             <p>All papers must be submitted through your author dasboard as a .pdf file.</p>
-                            <p>Failure to comply with the instructions will result in your paper not being included in the PVSAT-12 conference proceedings.</p>
+                            <p>Failure to comply with the instructions will result in your paper not being included in the PVSAT-13 conference proceedings.</p>
                             <p>Selected papers evidencing high quality contributions in PV materials and PV systems will be invited to submit their manuscripts to special issues of <a href="http://www.maneyonline.com/loi/ema" target="_blank">Energy Materials Journal</a> or IET Journal respectively.</p>
                             </div>
+                            -->
                         </div>
                     </div>
 
                     <div class="square-box splash-box block"style="background-color: #B14138; min-height:0px; margin-top:20px; padding-top: 0px;">
                         <div class="col-md-6 center">
                             <ul class="list-unstyled" style="font-size: 1.2em;">
-                                <li><strong>Abstract Submission</strong>: Mon 21 Dec 2015</li>
-                                <li><strong>Author Notification</strong>: Mon 01 Feb 2016</li>
+                                <li><strong>Abstract Submission</strong>: Fri 16 Dec 2016</li>
+                                <li><strong>Author Notification</strong>: Wed 01 Feb 2017</li>
                             </ul>
                     </div>
                         <div class="col-md-6 center">
                             <ul class="list-unstyled" style="font-size: 1.2em;">
-                                <li><strong>Early Bird Reg.</strong>: Fri 11 Mar 2016</li>
-                                <li><strong>Paper Submission</strong>: Fri 11 Mar 2016</li>
+                                <li><strong>Early Bird Reg.</strong>: Fri 10 Mar 2017</li>
+                                <li><strong>Paper Submission</strong>: Fri 10 Mar 2017</li>
                             </ul>
                     </div>
                     </div>

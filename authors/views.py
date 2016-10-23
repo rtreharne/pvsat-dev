@@ -264,7 +264,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/proceedings/oral/')
+                return HttpResponseRedirect('/authors/dashboard')
             else:
                 return HttpResponse("Your account is disabled")
 
