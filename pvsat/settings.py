@@ -110,15 +110,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 LOGIN_URL = '/authors/login/'
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS =True 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pvsat.info@gmail.com'
+EMAIL_HOST_PASSWORD = '>^xJ@.=s!\;O[5T'
+SERVER_EMAIL = 'pvsat.info@gmail.com'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'PVSAT Admin <pvsat.info@gmail.com>'
+SITE_URL = 'http://www.pvsat.org.uk/'
+ADMIN_EMAIL = 'info@uk-ises.org'
+EMAIL_STATUS= True
+
+'''
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS =True 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'rob.treharne@gmail.com' #'pvsat.info@gmail.com'
-EMAIL_HOST_PASSWORD = 'a1fn03l85'#'>^xJ@.=s!\;O[5T'
-SERVER_EMAIL = 'rob.treharne@gmail.com'#'pvsat.info@gmail.com'
+EMAIL_HOST_PASSWORD = '>^xJ@.=s!\;O[5T'#'a1fn03lw1ll0w'#'>^xJ@.=s!\;O[5T'
+SERVER_EMAIL = 'pvsat.info@gmail.com' #rob.treharne@gmail.com'#'pvsat.info@gmail.com'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = 'Robert Treharne <rob.treharne@gmail.com>'#'PVSAT Admin <pvsat.info@gmail.com>'
 SITE_URL = 'http://www.pvsat.org.uk/'
 ADMIN_EMAIL = 'info@uk-ises.org'
 EMAIL_STATUS= True
 
+'''
