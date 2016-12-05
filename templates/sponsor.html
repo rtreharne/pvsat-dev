@@ -8,7 +8,7 @@
                 <br/>
                 <br/>
                 <div class="col-md-12">
-                    <div class="blog-box square-box block" style="background-color: #fff; height: 552px; color:rgba(0, 0, 0, 0.64)">
+                    <div class="blog-box square-box block" style="background-color: #fff;color:rgba(0, 0, 0, 0.64)">
                         <div style="margin:5% 10%;">
                         
                         <h1>Become a PVSAT Sponsor!</h1>
@@ -17,16 +17,40 @@
                         </br>
                         </br>
                         </br>
-                        <h4>PVSAT-13 is proudly sponsored and supported by:</h4>
-                        <br />
-                        {% for sponsor in sponsors %}
-                            <div class="col-md-4 col-sm-6 col-xs-12 center block">
-                                    {% thumbnail sponsor.logo "200x100"  as im %}
-                                    <a href="{{sponsor.url}}" target="_blank"><img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
-                                    {% endthumbnail %}
-
+                            <div class="col-md-12">
+                                <h3 class="sponsor">Main Sponsors</h3>
+                                {% for sponsor in sponsors %}
+                                    {% if sponsor.type == 'Main' %}
+                                    <div style="display: inline-block">
+                                        <a href="{{sponsor.url}}" target="_blank"><img class="logo-main" src="{{sponsor.logo.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
                             </div>
-                        {% endfor %}
+                            <div class="col-md-12">
+                                <h3 class="sponsor">Associate Sponsors</h3>
+                                {% for sponsor in sponsors %}
+                                    {% if sponsor.type == 'Associate' %}
+                                    <div style="display: inline-block">
+
+                                    <!--<div class="col-md-3 col-sm-6 col-xs-12 center block">-->
+                                        <a href="{{sponsor.url}}" target="_blank"><img class="logo-associate" src="{{sponsor.logo.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-12">
+                                <h3 class="sponsor">Awards Sponsors</h3>
+                                {% for sponsor in sponsors %}
+                                    {% if sponsor.type == 'Poster' %}
+                                    <div style="display: inline-block">
+
+                                    <!--<div class="col-md-3 col-sm-6 col-xs-12 center block">-->
+                                        <a href="{{sponsor.url}}" target="_blank"><img class="logo-associate" src="{{sponsor.logo.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
                         </br>
                         </div>
                     </div>

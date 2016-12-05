@@ -23,6 +23,7 @@ def sponsor(request):
 def home(request):
     sponsor_list = Sponsor.objects.order_by('?')[:]
     speaker_list = Speaker.objects.order_by('?')[:]
+    committee_list = Member.objects.all()
     try:
         article = Article.objects.latest('pub_date')
     except ObjectDoesNotExist:
@@ -30,7 +31,8 @@ def home(request):
 
     dict = {'speakers': speaker_list,
             'sponsors': sponsor_list,
-            'articles': article}
+            'articles': article,
+            'committee': committee_list}
     return render(request, 'home.html', dict)
 
 '''

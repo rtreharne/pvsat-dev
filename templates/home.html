@@ -4,11 +4,11 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class = "col-lg-12 block splash">
+            <div class = "col-lg-12 block splash" style="padding-bottom: 0">
                 <br />
                 <br />
                 
-            <div class="col-lg-12 block">
+            <div class="col-lg-12 block" style="margin-bottom: 0; padding-bottom: 0">
                 <!--
                 <div class="col-md-12">
                     <div class="square-box blog-box" style="overflow:hidden; background-color:#990000; min-height:20px;">
@@ -22,7 +22,7 @@
                 -->
 
                 <div class="col-md-8">
-                    <div class="square-box blog-box" style="background-color:#4c5a83;">
+                    <div class="square-box blog-box title-box">
                         <div style="overflow: hidden;">
                             <div class="col-lg-12">
                             <p>13<sup>th</sup> Photovoltaic Science, Application and Technology Conference</p>
@@ -76,73 +76,118 @@
                     </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="square-box blog-box block" style="background-color:#333333;">
-                    <img class="logo" style="max-width:400px;" src="/static/img/SS.png">
-                    <h2>Research Methods in Solar PV</h2>
-                    <h3>4 April 2017</h3>
-                    <h4>University of Bangor</h4>
-                    <p>A one day workshop in the field of PV ideal for early stage researchers, PhD students, industry workers or postdocs. organised by the EPSRC SuperSolar PV Hub in association with PVSAT.</p>
-                    <br/>
-                    <div class="col-md-6 center" style="margin-bottom: 10px;">
-                    <!--
-                    <a class="btn btn-primary page-scroll center" href="http://www.cdt-pv.org/training/module/9/" style="width: auto" target="_blank">View Resources</a>
-                    -->
-                    <a class="btn btn-primary page-scroll" href="#" onClick="alert('Coming Soon')">More Info</a>
-                    </div>
-                    <div class="col-md-6 center" style="margin-bottom: 10px;">
-                    <a class="btn btn-primary page-scroll" href="#" onClick="alert('Coming Soon')">Register</a>
-                    </div>
-                    </div>
-                 </div>
-             </div>
-            
-            <div class="col-lg-12 block">
-                <div class="col-md-4">
-                    <div style="height:553px; background-color:#236732" class="square-box blog-box">
-                        <div class="col-lg-12">
-                            <h2>Conference Blog</h2>
-                            <h3>{{articles.title}}</h3>
-                            <h4><i>{{articles.author.author.user.first_name}} {{articles.author.author.user.last_name}}</i></h3>
-                            
-                            {% thumbnail articles.author.author.picture "300x300" crop="center" as im %}
-                            <p>
+                    <div class="col-md-4" style="margin-bottom:20px;">
+                        <div class="square-box blog-box block" style="background-color:#333333; padding-bottom: 0">
+                            <img class="logo" style="max-width:400px;" src="/static/img/SS.png">
+                            <h2>Research Methods in Solar PV</h2>
+                            <h3>4 April 2017</h3>
+                            <h4>University of Bangor</h4>
+                            <p>A one day workshop in the field of PV ideal for early stage researchers, PhD students, industry workers or postdocs. organised by the EPSRC SuperSolar PV Hub in association with PVSAT.</p>
                             <br/>
-                            <div class="col-sm-4 col-xs-12" style="float:left; text-align:center; margin-right: 5px;">
-                            <img class="profile-pic" style="width:100%;" src="{{im.url}}">
-                            <br/>
+                            <div class="col-md-6 center" style="margin-bottom: 10px;">
+                            <!--
+                            <a class="btn btn-primary page-scroll center" href="http://www.cdt-pv.org/training/module/9/" style="width: auto" target="_blank">View Resources</a>
+                            -->
+                            <a class="btn btn-primary page-scroll" href="#" onClick="alert('Coming Soon')">More Info</a>
                             </div>
-                            {% endthumbnail %}
-
-                            {{articles.body|slice:":300"|safe}} ...</p>
-                            <br />
-                            <a class="btn btn-primary page-scroll" href="{% url 'articles' %}{{articles.id}}/">Read More</a>
+                            <div class="col-md-6 center" style="margin-bottom: 10px;">
+                            <a class="btn btn-primary page-scroll" href="#" onClick="alert('Coming Soon')">Register</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-md-8">
-                    <div class="blog-box square-box block" style="background-color: #fff; height: 552px; color:rgba(0, 0, 0, 0.64)">
-                        <p style="text-align:center">PVSAT-13 is proudly sponsored and supported by:</p>
-                        {% for sponsor in sponsors %}
-                            <div class="col-md-4 col-sm-6 col-xs-12 center block">
-                                    {% thumbnail sponsor.logo "200x100"  as im %}
-                                    <a href="{{sponsor.url}}" target="_blank"><img class="" src="{{im.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
-                                    {% endthumbnail %}
-
+            <div class="col-lg-12">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="square-box blog-box new-blog block">
+                            <div class="col-md-4">
+                                <h2>Conference Blog</h2>
+                                <h3>{{articles.title}}</h3>
+                                <h4><i>{{articles.author.author.user.first_name}} {{articles.author.author.user.last_name}}</i></h4>
                             </div>
-                        {% endfor %}
-                        </br>
+                            <div class="col-md-8"
+
+                                {% thumbnail articles.author.author.picture "300x300" crop="center" as im %}
+                                <p>
+                                <br/>
+                                <div class="col-sm-4 col-xs-12" style="float:left; text-align:center; margin-right: 5px;">
+                                <img class="profile-pic" style="width:100%;" src="{{im.url}}">
+                                <br/>
+                                </div>
+                                {% endthumbnail %}
+
+                                {{articles.body|slice:":300"|safe}} ...</p>
+
+                                <a class="btn btn-primary page-scroll" href="{% url 'articles' %}{{articles.id}}/">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-12">
+                <div class="col-md-12" style="text-align: center">
+                    <div class="col-md-12">
+                        <div class="square-box blog-box sponsor block">
+                            <div class="col-md-12">
+                                <h3 class="sponsor">Main Sponsors</h3>
+                                {% for sponsor in sponsors %}
+                                    {% if sponsor.type == 'Main' %}
+                                    <div style="display: inline-block">
+                                        <a href="{{sponsor.url}}" target="_blank"><img class="logo-main" src="{{sponsor.logo.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="col-md-12">
+                                <h3 class="sponsor">Associate Sponsors</h3>
+                                {% for sponsor in sponsors %}
+                                    {% if sponsor.type == 'Associate' %}
+                                    <div style="display: inline-block">
+
+                                    <!--<div class="col-md-3 col-sm-6 col-xs-12 center block">-->
+                                        <a href="{{sponsor.url}}" target="_blank"><img class="logo-associate" src="{{sponsor.logo.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                <br/>
+                                <br/>
+                            </div>
+
+                            <div class="col-md-12">
+                                <h3 class="sponsor">Awards Sponsors</h3>
+                                {% for sponsor in sponsors %}
+                                    {% if sponsor.type == 'Poster' %}
+                                    <div style="display: inline-block">
+
+                                    <!--<div class="col-md-3 col-sm-6 col-xs-12 center block">-->
+                                        <a href="{{sponsor.url}}" target="_blank"><img class="logo-associate" src="{{sponsor.logo.url}}" style="padding: {{im|margin:"200x100"}}; max-width:100%;"></a>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-                <!--
-                <div class="col-md-8">
+
+
+
+
+
+
+
+             <div class="col-md-12">
+                <div class="col-md-12">
+                    <div class="col-md-12">
                     <div class="square-box speaker-box block">
-                        <h2>Guest Speakers</h2>
+                        <h2>PVSAT Committee Members</h2>
                     <br/>
-                    {% for speaker in speakers %}
-                        <div class="col-md-4 col-sm-4 col-xs-12 center block">
+                    {% for speaker in committee %}
+                        <div class="col-md-3 col-sm-3 col-xs-12 center block">
                                 {% thumbnail speaker.pic "300x300" crop="center" as im %}
                                 <img class="profile-pic" src="{{im.url}}">
                                 <p class="speaker-caption">{{speaker.forename}}
@@ -154,8 +199,10 @@
                     {% endfor %}
                     </div>
                 </div>
-                -->
-            </div>
+              </div>
+              </div>
+
+
 
             <!--
             <div class="col-lg-12 block">
@@ -177,7 +224,6 @@
             -->
             
 
-            </div>
             
         </div>
     </div>

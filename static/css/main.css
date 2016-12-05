@@ -1,5 +1,6 @@
 body {
     font-family: 'Roboto:300', sans-serif;
+    background-color: #DEDEDE;
 }
 h2 {
     font-size: 30px;
@@ -670,3 +671,48 @@ a.btn.btn-primary.page-scroll.main-but {
     margin: 1%;
 }
 
+.title-box {
+    background-color: white;
+    color: #353535;
+    margin-bottom: 30px;
+}
+
+.title-box a {
+    color: #146EBD
+}
+
+.new-blog {
+    background-color: #2A5D94;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    padding-bottom: 30px;
+}
+
+.sponsor {
+    background-color: white;
+    color: black;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 0px;
+    padding-bottom: 30px;
+}
+
+.logo-associate {
+    max-height: 150px;
+    margin: 0 10px;
+}
+
+.logo-main {
+    max-height: 250px;
+    margin: 0 10px;
+}
+
+h3.sponsor {
+    color: #5F5F5F;
+    padding:0;
+    margin:0;}
