@@ -178,6 +178,27 @@
 
 
 
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                    <div class="square-box speaker-box block guest-speaker" style="margin-bottom: 30px;">
+                        <h2>Guest Speakers</h2>
+                    <br/>
+                    {% for speaker in speakers %}
+                        <div class="col-md-3 col-sm-3 col-xs-12 center block">
+                                {% thumbnail speaker.pic "300x300" crop="center" as im %}
+                                <img class="profile-pic" src="{{im.url}}">
+                                <p class="speaker-caption">{{speaker.forename}}
+                                   {{speaker.surname}}
+                                   </br>
+                                   ({{speaker.affiliation}})</p>
+                                {% endthumbnail %}
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+             </div>
+                </div>
 
 
 
@@ -185,7 +206,7 @@
              <div class="col-md-12">
                 <div class="col-md-12">
                     <div class="col-md-12">
-                    <div class="square-box speaker-box block">
+                    <div class="square-box speaker-box block" style="background-color: #A461C5; margin-bottom:30px;">
                         <h2>PVSAT Committee Members</h2>
                     <br/>
                     {% for speaker in committee %}
