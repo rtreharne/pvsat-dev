@@ -185,15 +185,17 @@
                         <h2>Guest Speakers</h2>
                     <br/>
                     {% for speaker in speakers %}
-                        <div class="col-md-3 col-sm-3 col-xs-12 center block">
-                                {% thumbnail speaker.pic "300x300" crop="center" as im %}
-                                <img class="profile-pic" src="{{im.url}}">
-                                <p class="speaker-caption">{{speaker.forename}}
-                                   {{speaker.surname}}
-                                   </br>
-                                   ({{speaker.affiliation}})</p>
-                                {% endthumbnail %}
-                        </div>
+                        <a href="#speakerModal_{{speaker.id}}" data-toggle="modal">
+                            <div class="col-md-3 col-sm-3 col-xs-12 center block">
+                                    {% thumbnail speaker.pic "300x300" crop="center" as im %}
+                                    <img class="profile-pic" src="{{im.url}}">
+                                    <p class="speaker-caption">{{speaker.forename}}
+                                       {{speaker.surname}}
+                                       </br>
+                                       ({{speaker.affiliation}})</p>
+                                    {% endthumbnail %}
+                            </div>
+                        </a>
                     {% endfor %}
                     </div>
                 </div>
@@ -316,6 +318,7 @@
     $(document).ready(function () {
 
     $('#memberModal').modal('show');
+
 
 });
 </script>
