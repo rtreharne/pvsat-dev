@@ -262,7 +262,7 @@
 
 <!-- Modal -->
 
-
+{% if not user.is_authenticated %}
 <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -285,6 +285,7 @@
         </div>
     </div>
 </div>
+{% endif %}
 
 
 {% endblock %}
