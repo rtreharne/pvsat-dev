@@ -710,6 +710,7 @@ a.btn.btn-primary.page-scroll.main-but {
 .logo-main {
     max-height: 250px;
     margin: 0 10px;
+    max-width: 350px;
 }
 
 h3.sponsor {

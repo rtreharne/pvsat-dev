@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1026767a-d046-406a-9fa3-c5c966a1047d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/main.css" afterPath="$PROJECT_DIR$/static/css/main.css" />
     </list>
     <ignored path="pvsat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12780">
-              <caret line="710" column="19" selection-start-line="710" selection-start-column="19" selection-end-line="710" selection-end-column="19" />
+            <state relative-caret-position="195">
+              <caret line="712" column="21" selection-start-line="712" selection-start-column="21" selection-end-line="712" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -88,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -166,12 +166,12 @@
         <option value="$PROJECT_DIR$/sponsors/admin.py" />
         <option value="$PROJECT_DIR$/sponsors/models.py" />
         <option value="$PROJECT_DIR$/templates/sponsor.html" />
-        <option value="$PROJECT_DIR$/static/css/main.css" />
         <option value="$PROJECT_DIR$/pvsat/views.py" />
         <option value="$PROJECT_DIR$/venue/templates/venue.html" />
         <option value="$PROJECT_DIR$/programme/templates/registration.html" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/static/css/main.css" />
       </list>
     </option>
   </component>
@@ -890,14 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12780">
-          <caret line="710" column="19" selection-start-line="710" selection-start-column="19" selection-end-line="710" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pvsat/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -973,6 +965,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="73" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="712" column="21" selection-start-line="712" selection-start-column="21" selection-end-line="712" selection-end-column="21" />
           <folding />
         </state>
       </provider>
