@@ -10,6 +10,7 @@ class Speaker(models.Model):
     url = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
+    bio = models.TextField(blank=True,null=True)
 
     def __unicode__(self):
         return self.surname
