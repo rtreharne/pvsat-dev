@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    
+
+
     <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
 
 	{% block title %}
@@ -91,6 +92,11 @@
                     <li>
                         <a class="page-scroll" href="/media/forms/PVSAT-13_Exhibitor-Registration-and-Payment-Form.docx">Exhibitors</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="page-scroll" href="">Archive</a>
+                    </li>
+                    {% endif %}
                     <li>
                         <a class="page-scroll" href="{% url 'articles' %}">Blog</a>
                     </li>
@@ -159,9 +165,10 @@
                         <img src="/static/img/bangor_logo.png" style="max-height: 100px; max-width: 100%; display: inline-text">
                     </a>
                     -->
-                    <a href="http://solidstatedesign.co.uk" target="_blank">
-                        <img src="/static/img/solidstate.png" style="max-height: 100px; max-width:100%;display: inline-text;">
+                    <a href="http://brotherscode.co.uk" target="_blank">
+                        <img src="/static/img/brothers.png" style="max-height: 100px; max-width:100%;display: inline-text;">
                     </a>
+                    <br/>
                     <!--
                     <a href="http://cdt-pv.org" target="_blank">
                         <img src="/static/img/cdtpv_logo_white.png" style="max-height: 100px; max-width:100%;display: inline-text;">
@@ -169,7 +176,7 @@
                     -->
                     <br />
 				
-					<p>&copy Copyright <a href="http://solidstatedesign.co.uk">Solid State Design 2016</a></p>
+					<p>&copy Copyright <a href="http://brotherscode.co.uk">Brothers Code 2016</a></p>
 					<p>|<a href="/admin/" target="_blank">Admin</a>|</p>
                 </div>
             </div>
