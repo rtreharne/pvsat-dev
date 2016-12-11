@@ -30,7 +30,7 @@
                         <div class="col-sm-7 block">
                             <h1 style="margin-top: 0px; font-size:3em;">PVSAT-13</h1>
                             <h2>5 - 7 April 2017</h2>
-                            <h3><a href="http://bangor.ac.uk">University of Bangor, UK</a></h3>
+                            <h3><a href="http://bangor.ac.uk">Bangor University, UK</a></h3>
                             <p>Organized by <a href="http://www.uk-ises.org/">The Solar Energy Society (UK-ISES).</a></p>
                             <!---
                             <p class="share">
@@ -180,6 +180,8 @@
 
 
 
+
+
              <div class="col-md-12">
                 <div class="col-md-12">
                     <div class="col-md-12">
@@ -257,4 +259,42 @@
     </section>
     {% endif %}
     -->
+
+<!-- Modal -->
+
+
+<div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                 <h2 class="modal-title" id="memberModalLabel" style="font-family: Roboto">Submit Your Abstract!</h2>
+
+            </div>
+            <div class="modal-body" style="font-family: Roboto; font-size: 1.2em; font-weight: 100;">
+                <p>The abstract submission deadline for PVSAT-13 is Fri <strong>16 Dec 2016</strong>.</p>
+                <p>If you haven't submitted your abstract yet there's still time. Click the button below to login to the
+                    site's "Author" portal or to create a new account.</p>
+                <p>N.B. If you submitted an abstract to last year's conference you will still need to register a new account.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="/authors/login/"><button type="button" class="btn btn-primary">Submit Abstract</button></a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function () {
+
+    $('#memberModal').modal('show');
+
+});
+</script>
 {% endblock %}

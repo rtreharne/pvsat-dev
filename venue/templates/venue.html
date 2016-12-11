@@ -25,27 +25,36 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
         </ol>
+
+        <style>
+            header.carousel {
+                height: 70%;
+            }
+            body {
+                background-color: white;
+            }
+        </style>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('/static/img/liverpool_1.jpg');"></div>
-                <div class="carousel-caption">
-					<a href="http://liv.ac.uk" target="_blank"><img class="carousel-logo" src="/static/img/liverpool_logo.png"/></a>
-                </div>
+                <div class="fill" style="background-image:url('/static/img/image004.jpg');"></div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('/static/img/liverpool_2.jpg');"></div>
-                <div class="carousel-caption">
-					<a href="http://liv.ac.uk" target="_blank"><img class="carousel-logo" src="/static/img/SI_logo.png"/></a>
-                </div>
+                <div class="fill" style="background-image:url('/static/img/image001.jpg');"></div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('/static/img/cdtpv.jpg');"></div>
-                <div class="carousel-caption">
-					<a href="http://cdt-pv.org" target="_blank"><img class="carousel-logo" src="/static/img/cdtpv_logo.png"/></a>
-                </div>
+                <div class="fill" style="background-image:url('/static/img/image002.jpg');"></div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('/static/img/image003.jpg');"></div>
+            </div>
+
+            <div class="item">
+                <div class="fill" style="background-image:url('/static/img/image005.jpg');"></div>
             </div>
         </div>
 
@@ -63,88 +72,53 @@
 
         <!-- Marketing Icons Section -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">
-                    Welcome to Liverpool
+            <div class="col-lg-8 col-lg-offset-2">
+                <h1 class="page-header" style="font-family: Roboto">
+                    Welcome to Bangor
                 </h1>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>Award Winning Facilities</h4>
-                    </div>
-                    <div class="panel-body">
-						<p class="justify"><a href="{% url 'home' %}">PVSAT-12</a> will be held at UoL's Central Teaching Hub (CTH). The building -  purpose built for our undergraduate teaching in <a href="https://www.liv.ac.uk/chemistry/" target="_blank">Chemistry</a>, <a href="http://www.liv.ac.uk/physics/" target="_blank">Physics</a>, <a href="https://www.liv.ac.uk/environmental-sciences/" target+"_blank">Environmental Sciences</a> and <a href="https://www.liv.ac.uk/archaeology-classics-and-egyptology/" target="_blank">Archaeology</a> - is a perfect conference venue, with open atriums for exhibitors and poster presentations as well as a suite of state of the art lecture theatres.</p>
-                        <a href="http://www.liv.ac.uk/central-teaching-hub/" target="_blank" class="btn btn-primary">More Info</a>
-                    </div>
+                <p style="font-family: Roboto; font-size: 1.5em; font-weight: 100">
+                    <strong>The PVSAT-13 conference 2017</strong> will take place at <a href="https://www.bangor.ac.uk/" target="_blank">Bangor University</a>. You will be welcomed
+                    on the first evening of the conference into the <strong>Main Arts building</strong> (47 on campus map),
+                    a Grade 1 listed building completed in 1911 by the architect <a href="https://en.wikipedia.org/wiki/Henry_Hare" target="_blank">Henry T Hare</a>.
+                    It is considered to be of exceptional interest, a status afforded to fewer
+                    than 3% of all listed buildings in Wales and England. Over the main entrance
+                    to Prichard Jones Hall from the outer quad you will see the arms of the donor of the
+                    hall, <a href="https://en.wikipedia.org/wiki/John_Prichard-Jones" target="_blank">Sir J. Prichard Jones</a>, The arms of the county of Anglesey, of the
+                    University of Wales and of the City of London; on the central bay of the Library
+                    wing facing the quadrangle are the arms of the Drapers' Company, who paid for the wing.
+                    From the upstairs corridor guests are able to access the Shankland library, one of the most impressive interiors at Bangor
+                </p>
+                <a href="https://www.bangor.ac.uk/tour/LocationMap.pdf" target="_blank"><button type="button" class="btn btn-primary btn-lg"> Campus Map</button></a>
+                 <h2 class="page-header" style="font-family: Roboto">
+                    Map and Accommodation
+                </h2>
+
+                <iframe src="https://www.google.com/maps/d/u/1/embed?mid=1t0jXvoiLtwDR2JOTjC8UN_PipoM" width="640" height="480"></iframe>
+
+                <h2 class="page-header" style="font-family: Roboto">Conference Dinner</h2>
+                <p style="font-family: Roboto; font-size: 1.5em; font-weight: 100">
+
+                    <a href="http://www.celticcastles.com/castles/chateau-rhianfa/" target="_blank">Château Rhianfa</a> stands proudly amidst spectacular gardens on the isle of Anglesey, with views over
+                    the Menai Strait and the towering peaks of Snowdonia.
+                    Every last detail has been thought about at Château Rhianfa. From the music and drawing rooms to the
+                    turret showers and summer and winter balconies, it’s easy to be impressed with this beautiful
+                    château. This hotel and exclusive-use venue, set in one of the most beautiful parts of Wales, is
+                    guaranteed to play host to a truly memorable PVSAT conference dinner. We hope you can join us.
+                </p>
+                <br/>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/zgpyxeD29oo" frameborder="0" allowfullscreen></iframe>
+
+                <div class="col-md-4 col-sm-6">
+                        <img class="img-responsive img-portfolio" src="/static/img/conf_dinner1.jpg" alt="">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>World Class Energy Research</h4>
-                    </div>
-                    <div class="panel-body">
-						<p class="justify"><a href="https://www.liv.ac.uk/renewable-energy/" target="_blank">The Stephenson Institute for Renewable Energy</a> (located directly opposite the CTH) is dedicated to exploring the future of renewable, clean and sustainable energy technology. A primary focus of this research is thin-film photovoltaics which is led by <a href="https://www.liv.ac.uk/renewable-energy/people-stephenson-institute-for-renewable-energy/ken-durose/" target="_blank">Prof. Ken Durose's group</a>. We look forward to showing you around our research labs.</p>
-						<a href="https://www.liv.ac.uk/renewable-energy/" target="_blank" class="btn btn-primary">More Info</a>
-                    </div>
+                <div class="col-md-4 col-sm-6">
+                        <img class="img-responsive img-portfolio" src="/static/img/conf_dinner2.jpg" alt="">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4>CDT-PV</h4>
-                    </div>
-                    <div class="panel-body">
-						<p class="justify">UoL is the lead co-ordinator of the <a href="http://cdt-pv.org" target="_blank">Center for Doctoral Training in New and Sustainable Photovoltaics</a>. The CDT will train over 60 PhD researchers with a curriculum dedicated to PV. Our first two cohorts will be attending PVSAT-12. Please don't be afraid to say hello to this group of highly enthusiastic and well informed researchers.</p>
-                        <a href="http://cdt-pv.org" class="btn btn-primary">More Info</a>
-                    </div>
+                <div class="col-md-4 col-sm-6">
+                        <img class="img-responsive img-portfolio" src="/static/img/conf_dinner3.jpg" alt="">
                 </div>
             </div>
         </div>
-
-        <!-- Portfolio Section -->
-        <div id="dinner" class="row">
-            <div class="col-lg-12">
-                <h2 id="accommodation" class="page-header">Accommodation</h2>
-                <div style="text-align: justify;"class="col-md-5 block">
-
-                    <p style="font-size: 1.2em;">In partnership with the <a href="http://www.visitliverpool.com/convention-bureau" target="_blank">Liverpool Convention Bureau</a>, PVSAT has secured discounted rooms at the Adagio, Days Inn, Marriott and Novotel hotels which are all located centrally in the city. These rooms will be held for PVSAT delegates up to 6 weeks before the conference. You can click the button below now and proceed to book your room (select "Credit Card Guarantee" as guest type).</p>
-                    
-                    <p style="font-size: 1.2em; color: red;">Please note that on the weekend following the conference Liverpool will play host to the Grand National - A major event. Hotel rooms are likely to be in short supply in the days leading up to this event so make sure you book you hotel as soon as possible.</p>
-
-                    <br/>
-                    <p style="text-align: left;">
-                        <a href="https://resweb.passkey.com/go/PVSATLiverpool" target="_blank" class="btn btn-primary">Book Now!</a>
-                    </p>
-                </div>
-                <div class="col-md-7 block">
-                <iframe src="https://www.google.com/maps/d/embed?mid=z4gaGIgyT6J0.kH6zEb8jZZ5k" width="640" height="480"></iframe>
-                </div>
-                <h2 class="page-header">Conference Dinner</h2>
-				<a href="http://theathenaeum.org.uk" target="_blank"><img class="dinner-logo" src="/static/img/athenaeum_logo.png"></a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                    <img class="img-responsive img-portfolio" src="/static/img/ath_1.jpg" alt="">
-            </div>
-            <div class="col-md-4 col-sm-6">
-                    <img class="img-responsive img-portfolio" src="/static/img/ath_2.jpg" alt="">
-            </div>
-            <div class="col-md-4 col-sm-6">
-                    <img class="img-responsive img-portfolio" src="/static/img/ath_3.jpg" alt="">
-            </div>
-            <!--
-			<div class="col-lg-12">
-					<a type="button" class="btn btn-primary" href="/media/forms/menu.pdf">
-						<span class="glyphicon glyphicon-file"></span> Menu</span> 
-					</a>
-			</div>
-            -->
-        </div>
-        <!-- /.row -->
-		
-        <!-- Portfolio Section -->
-        <!-- /.row -->
 	</div>
     <script>
     $('.carousel').carousel({
