@@ -22,7 +22,7 @@ def sponsor(request):
 
 def home(request):
     sponsor_list = Sponsor.objects.order_by('?')[:]
-    speaker_list = Speaker.objects.order_by('?')[:]
+    speaker_list = Speaker.objects.all()#order_by('?')[:]
     committee_list = Member.objects.all()
     try:
         article = Article.objects.latest('pub_date')
