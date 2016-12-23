@@ -5,7 +5,7 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.conf import settings
 
 def overview(request):
-    return render(request, 'bursary_overview.html', {})
+    return render(request, 'bursary.html', {})
     
 def application(request):
     submitted = False

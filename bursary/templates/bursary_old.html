@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class = "col-lg-12 block splash center">
+                <br />
+                <br />
+                <br />
+                <div class="form-box square-box col-lg-8 col-sm-offset-2">
+					<h2>Supersolar Bursary Application Form</h2>
+                    <hr class="form-line">
+                    {% if not submitted %}
+                    <p style="margin: 25px; font-size:1.1em;">We are able to provide a limited number of bursaries to students wishing to attend the conference. The bursary will cover the full cost of the conference's registration fee and will be awarded on a "first come first serve" basis.</p>
+                    {% endif %}
+					
+					{% if submitted %}
+                    <form>
+					<p>Thank you for submitting an application</p>
+					<p><a href="{% url 'home' %}">Return to Homepage</a></p>
+                    </form>
+					{% else %}
+
+					<form id = "bursary" method="post" action="/bursary/supersolar/" enctype="multipart/form-data">
+
+						{% csrf_token %}
+
+						{{ bursary_form.as_ul}}
+
+						<input class="btn btn-primary page-scroll" type="submit" name="submit" value="Submit" />
+
+					</form>
+					<div class="col-lg-12 center" style="margin-bottom: 20px">
+						<a class="btn btn-primary page-scroll" href="{% url 'overview' %}">Cancel</a>
+                        <br/>
+					</div>
+					{% endif %}
+
+				</div>
+                
+                
+             </div>
+        </div>
+    </div>
+
+{% endblock %}
