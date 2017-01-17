@@ -718,3 +718,9 @@ h3.sponsor {
     color: #5F5F5F;
     padding:0;
     margin:0;}
+
+img.bursary-logo {
+    width: 100%;
+    max-width: 280px;
+    margin: 10px;
+}
