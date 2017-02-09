@@ -9,17 +9,19 @@
                 <br />
                 
             <div class="col-lg-12 block" style="margin-bottom: 0; padding-bottom: 0">
-                <!--
+
                 <div class="col-md-12">
                     <div class="square-box blog-box" style="overflow:hidden; background-color:#990000; min-height:20px;">
                         <div style="overflow: hidden;">
                             <div class="col-lg-12">
-                                <p style="font-size:1.5em; text-align: center; margin:0"><strong>PVSAT-13</strong> will be held at University of Bangor, N. Wales, 5-7 April 2017.</p>
+                                <p style="font-size:1.5em; text-align: center; margin:0"><strong>Deadline:</strong>
+                                    <u>Fri 10 March</u> for paper submission, late news abstracts and early bird registration.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                -->
+
 
                 <div class="col-md-8">
                     <div class="square-box blog-box title-box">
@@ -55,17 +57,29 @@
                         </div>
                     </div>
                     <div class="col-md-12" style="min-height:200px;">
+                        <p style="font-size: 1.2em;">
+
+                            <strong>PVSAT is the UK’s premier scientific event for solar PV </strong>where the latest
+                            advances in UK research and development are presented and discussed.  This 3-day conference
+                            covers all PV technologies; crystalline silicon, inorganic thin film, multi-junction
+                            concentrators and emerging organic and hybrid cells, including perovskite cells.</p>
+                        </p>
+                        <p style="font-size: 1.2em; color: #ff0000;"><strong>Late News Abstracts</strong>: This year we are encouraging the submission of late
+                            news abstracts for poster presentations. The submission deadline is <strong>10 March
+                                2016.</strong>
+                        </p>
+
+                        <!--
                         <p>
 
-                            <strong>PVSAT is the UK’s premier scientific event for solar PV </strong>where the latest advances in UK research and development are presented and discussed.  This 3-day conference covers all PV technologies; crystalline silicon, inorganic thin film, multi-junction concentrators and emerging organic and hybrid cells, including perovskite cells.</p>  
-                        </p>
-                        <p>
                         <a href="https://connect.innovateuk.org/web/supersolar-hub" target="_blank">The EPSRC
                             Supergen Supersolar Hub</a> are providing a number of bursaries to students wishing to
                             attend PVSAT-13. Students wishing to apply for a bursary should click the button below.
                         </p>
+                        -->
                         <hr/>
                         <p>
+                           <a class="btn btn-primary page-scroll main-but" href="{% url 'submit_abstract' %}">Submit Late Abstract</a>
                            <a class="btn btn-primary page-scroll main-but" href="{% url 'bursary' %}">Apply for Bursary</a>
                        </p>
 
@@ -293,11 +307,17 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                 <h2 class="modal-title" id="memberModalLabel" style="font-family: Roboto">It's not too late!</h2>
+                 <h2 class="modal-title" id="memberModalLabel" style="font-family: Roboto">It's still not too late!</h2>
 
             </div>
             <div class="modal-body" style="font-family: Roboto; font-size: 1.5em; font-weight: 100;">
-                <p>The abstract submission deadline for PVSAT-13 has been extended to <font style="color: red;">
+                <p>This year we are encouraging the submission of <strong>Late News Abstracts</strong>. This is an option
+                    for reporting recent discoveries that were not available at the abstract submission deadline. All
+                    accepted late news abstracts will presented as posters.
+                </p>
+                <p>
+                    The Late News Abstract submission deadline
+                    is<font style="color: red;">
                     <strong>Fri 23 Dec 2016</strong></font>.</p>
                 <p>Click the button below to login to the
                     site's "Author" portal or to create a new account.</p>
@@ -340,9 +360,9 @@
 {% block javascript %}
 <script>
 
-    //$(document).ready(function () {
+    $(document).ready(function () {
 
-    //$('#memberModal').modal('show');
+    $('#memberModal').modal('show');
 
 
 });
