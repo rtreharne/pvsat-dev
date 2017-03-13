@@ -7,9 +7,9 @@
             <div class = "col-lg-12 block splash" style="padding-bottom: 0">
                 <br />
                 <br />
-                
-            <div class="col-lg-12 block" style="margin-bottom: 0; padding-bottom: 0">
 
+            <div class="col-lg-12 block" style="margin-bottom: 0; padding-bottom: 0">
+                <!-- DEADLINE
                 <div class="col-md-12">
                     <div class="square-box blog-box" style="overflow:hidden; background-color:#990000; min-height:20px;">
                         <div style="overflow: hidden;">
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-
+                -->
 
                 <div class="col-md-8">
                     <div class="square-box blog-box title-box">
@@ -64,10 +64,7 @@
                             covers all PV technologies; crystalline silicon, inorganic thin film, multi-junction
                             concentrators and emerging organic and hybrid cells, including perovskite cells.</p>
                         </p>
-                        <p style="font-size: 1.2em; color: #ff0000;"><strong>Late News Abstracts</strong>: This year we are encouraging the submission of late
-                            news abstracts for poster presentations. The submission deadline is <strong>10 March
-                                2016.</strong>
-                        </p>
+
 
                         <!--
                         <p>
@@ -79,7 +76,6 @@
                         -->
                         <hr/>
                         <p>
-                           <a class="btn btn-primary page-scroll main-but" href="{% url 'submit_abstract' %}">Submit Late Abstract</a>
                            <a class="btn btn-primary page-scroll main-but" href="{% url 'bursary' %}">Apply for Bursary</a>
                        </p>
 
@@ -298,7 +294,7 @@
     {% endif %}
     -->
 
-<!-- Modal -->
+<!-- Modal
 
 {% if not user.is_authenticated %}
 <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
@@ -331,7 +327,7 @@
     </div>
 </div>
 {% endif %}
-
+-->
 {% for speaker in speakers %}
 <div class="modal fade" id="speakerModal_{{speaker.id}}" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog">
