@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load thumbnail %}
 
 {% block content %}
@@ -294,40 +295,42 @@
     {% endif %}
     -->
 
-<!-- Modal
+<!-- Modal -->
 
-{% if not user.is_authenticated %}
+
 <div class="modal fade" id="memberModal" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
-                 <h2 class="modal-title" id="memberModalLabel" style="font-family: Roboto">It's still not too late!</h2>
+                 <h2 class="modal-title" id="memberModalLabel" style="font-family: Roboto">Dinorwig Hydro Power Station Tour</h2>
+                 <h3>Wed 5 April (Pickup at 8.30 AM)</h3>
 
             </div>
             <div class="modal-body" style="font-family: Roboto; font-size: 1.5em; font-weight: 100;">
-                <p>This year we are encouraging the submission of <strong>Late News Abstracts</strong>. This is an option
-                    for reporting recent discoveries that were not available at the abstract submission deadline. All
-                    accepted late news abstracts will presented as posters.
-                </p>
+                <p>Set against a magnificent backdrop of the towering mountains and the magnificent scenery of Snowdonia,
+                    First Hydro's pumped storage power station in Dinorwig, Llanberis supplies electricity to the Grid on a
+                    daily basis and provides back-up for periods of heavy demand. The station offers a seriously fast response
+                    time - probably the fastest of any power facility in the world - 1,728MW from standstill in just 90
+                    seconds!</p>
                 <p>
-                    The Late News Abstract submission deadline
-                    is<font style="color: red;">
-                    <strong>Fri 10 March 2017</strong></font>.</p>
-                <p>Click the button below to login to the
-                    site's "Author" portal or to create a new account.</p>
-                <p>N.B. If you submitted an abstract to last year's conference you will still need to register a new account.</p>
+                    Don't miss this amazing opportunity for a tour of Dinorwig Power Station, available to PVSAT-13 delegates only.
+                </p>
+                <p>To register, please email <a href="stevie.scanlan@bangor.ac.uk">stevie.scanlon@bangor.ac.uk</a>.
+                The tour is limited to 28 places so register quick!</p>
+                <img src="{% static 'img/dinorwig.jpg' %}" style="width:100%; padding: 5%;" />
+
+
             </div>
             <div class="modal-footer">
-                <a href="/authors/login/"><button type="button" class="btn btn-primary">Submit Abstract</button></a>
+                <!--<a href="/authors/login/"><button type="button" class="btn btn-primary">Submit Abstract</button></a>-->
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
-{% endif %}
--->
+
 {% for speaker in speakers %}
 <div class="modal fade" id="speakerModal_{{speaker.id}}" tabindex="-1" role="dialog" aria-labelledby="memberModalLabel" aria-hidden="true">
     <div class="modal-dialog">
