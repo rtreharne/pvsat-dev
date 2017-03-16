@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1026767a-d046-406a-9fa3-c5c966a1047d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
     <ignored path="pvsat.iws" />
     <ignored path=".idea/workspace.xml" />
