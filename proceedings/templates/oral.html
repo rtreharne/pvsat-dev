@@ -3,6 +3,11 @@
 
 {% block content %}
     <div class="container">
+        <style>
+        body {
+            background-color: #fff
+            }
+    </style>
         <div class="row" style="margin-top: 50px; margin-bottom: 50px;">
             <div class="col-md-3" id = "leftCol">
                <div class="left" style="margin-top: 25px; text-align: left; background-color:white;" id="sidebar">
@@ -68,10 +73,11 @@
                                         {% endif %}
                                         ">
                                         {{abstract.delivery_decision}} Presentation | {{abstract.date|date:'H:i'}}</p>
-                                        
+                                        {% if abstract.upload %}
                                         <a href="/media/{{abstract.upload}}" target="_blank">
                                             <i title="Abstract" class="material-icons">description</i>
                                         </a>
+                                    {% endif %}
                                         {% if abstract.delivery_decision = 'Oral' %}
                                             {% if abstract.slides_file and user.is_authenticated %}
                                                 <a href="/media/{{abstract.slides_file}}/" target="_blank">
@@ -99,15 +105,7 @@
                             </div>
                             <div class="col-md-3 block hidden-xs hidden-sm" style="text-align: center;">
                             <br/>
-                                <a href="
-                                    {% if abstract.author.linkedin %}
-                                    {{abstract.author.linkedin}}" target="_blank
-                                    {% elif abstract.author.url  %}
-                                    {{abstract.author.url}}" target="_blank
-                                    {% else %}
-                                    #" onclick="return false;
-                                    {% endif %}
-                                    ">
+
                                 {% if abstract.author.picture %}
                                     {% thumbnail abstract.author.picture "150x150" crop="center" as im %}
                                     <img class="profile-pic" src="{{im.url}}"/>
@@ -117,7 +115,7 @@
                                         {{abstract.author.user.first_name|slice:":1"}}{{abstract.author.user.last_name|slice:":1"}}
                                     </div>
                                 {% endif %}
-                                </a>
+
                                     <p><strong>{{abstract.author.user.title}} {{abstract.author.user.first_name}} {{abstract.author.user.last_name}}</strong></p>
                             </div>
                             </div>
